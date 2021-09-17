@@ -1,23 +1,42 @@
 const Vls = {
   mode: "dev",
+  printLog: null,
   data: {
     logList: [],
   },
   shouldLog() {
-    if (this.mode === "dev") return true;
-    return false;
+    this.log = this.printLog === "dev" ? true : false;
+    return this.log;
   },
-  log(msg = "Missing Data") {
-    if (this.shouldLog()) console.log(msg);
+  log(msg = "Missing Data", type = null) {
+    if (this.log) {
+      switch (type) {
+        case "error":
+          console.error(msg);
+          break;
+
+        case "warn":
+          console.warn(msg);
+          break;
+
+        case "info":
+          console.info(msg);
+          break;
+
+        default:
+          console.log(msg);
+          break;
+      }
+    }
   },
-  info(msg = "Missing Data") {
-    if (this.shouldLog()) console.info(msg);
+  info(msg = null) {
+    this.log(msg, "info");
   },
-  warn(msg = "Missing Data") {
-    if (this.shouldLog()) console.warn(msg);
+  warn(msg = null) {
+    this.log(msg, "warn");
   },
-  error(msg = "Missing Data") {
-    if (this.shouldLog()) console.error(msg);
+  error(msg = null) {
+    this.log(msg, "error");
   },
   clear() {
     try {
