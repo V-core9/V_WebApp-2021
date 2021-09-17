@@ -1,4 +1,6 @@
 const appCfg = {
-  mode: "dev",
+  mode: "development",
   lang: "en",
 };
+
+module.exports = appCfg;

@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  mode: "development",
   entry: {
     app: "./src/app.js",
     //v_cursor: './[.v.]_dev_apps/_x1/SRC/helpers/v_cursor.js',
