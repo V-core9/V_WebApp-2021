@@ -1,4 +1,5 @@
-const Vls = require(".");
+/*jshint esversion: 8 */
+const { Vls } = require(".");
 
 Vls.log("? MINGW64 ~/_V_/App");
 

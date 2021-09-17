@@ -1,6 +1,11 @@
-const Vls = require("../console/");
+/*jshint esversion: 8 */
+const { Vls } = require("../console/");
 
 const V_History = {
+  length: "",
+  scrollRestore: "",
+  currentState: "",
+
   back() {
     history.back();
   },

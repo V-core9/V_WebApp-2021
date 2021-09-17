@@ -1,3 +1,6 @@
+/*jshint esversion: 8 */
+const { Vls } = require("../console/");
+
 const {
   V_TimeLine,
   Vtl,

@@ -1,4 +1,5 @@
-const Vls = require("../console/");
+/*jshint esversion: 8 */
+const { Vls } = require("../console/");
 const appCfg = require("../../app_config");
 
 const V_FormData = {

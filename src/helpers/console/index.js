@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 const V_Console = {
   mode: "dev",
   printLog: null,
@@ -99,6 +100,6 @@ const V_Console = {
   },
 };
 
-const Vls = V_Console;
-
-module.exports = Vls;
+module.exports = {
+  Vls: V_Console,
+};
