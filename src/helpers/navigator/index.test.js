@@ -1,7 +1,7 @@
 const { Vnav, V_Navigator } = require(".");
 const { Vls } = require("../console/");
 
-const vNavTest = () => {
+async function vNavTest() {
   try {
     Vnav.registerProtocolHandler(
       "web+burger",
@@ -12,8 +12,8 @@ const vNavTest = () => {
     Vls.error(err);
     return err;
   }
-};
-const vNavTest2 = () => {
+}
+async function vNavTest2() {
   try {
     const unread = 30;
     Vnav.setAppBadge(unread); // last title arg included for compatibility
@@ -22,6 +22,6 @@ const vNavTest2 = () => {
     Vls.error(err);
     return err;
   }
-};
+}
 
 module.exports = [vNavTest, vNavTest2];
