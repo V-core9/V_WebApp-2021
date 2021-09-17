@@ -29,15 +29,20 @@ const Vls = {
       }
     }
   },
+
   info(msg = null) {
     this.log(msg, "info");
   },
+
   warn(msg = null) {
     this.log(msg, "warn");
   },
+
   error(msg = null) {
     this.log(msg, "error");
   },
+
+  //-CLEAR-------
   clear() {
     try {
       console.clear();
@@ -48,18 +53,25 @@ const Vls = {
       return error;
     }
   },
+
+  //-COUNT-------
   count(label = null) {
     console.count(label);
   },
   countReset(label = null) {
     console.countReset(label);
   },
+
   dir(object = {}) {
     console.dir(object);
   },
+
+  //-TRACE-------
   trace() {
     console.trace();
   },
+
+  //-GROUPS-------
   group(label = null) {
     console.group(label);
   },
@@ -69,9 +81,13 @@ const Vls = {
   groupCollapsed(label = null) {
     console.groupCollapsed(label);
   },
+
+  //-TABLE-------
   table(label = null) {
     console.table(label);
   },
+
+  //-TIME-------
   time(label = null) {
     console.time(label);
   },
