@@ -1,4 +1,4 @@
-const Vls = require("./root");
+const Vls = require(".");
 
 Vls.log("? MINGW64 ~/_V_/App");
 
@@ -36,7 +36,7 @@ Vls.groupEnd("yeaaaa");
 
 Vls.groupEnd("Ouh EYEAAHAH");
 
-console.table(["apples", "oranges", "bananas"]);
+Vls.table(["apples", "oranges", "bananas"]);
 
 function Person(firstName, lastName) {
   this.firstName = firstName;
@@ -45,7 +45,7 @@ function Person(firstName, lastName) {
 
 var me = new Person("John", "Smith");
 
-console.table(me);
+Vls.table(me);
 
 // an array of arrays
 
@@ -54,7 +54,7 @@ var people = [
   ["Jane", "Doe"],
   ["Emily", "Jones"],
 ];
-console.table(people);
+Vls.table(people);
 
 // an object whose properties are objects
 
@@ -64,4 +64,4 @@ family.mother = new Person("Jane", "Smith");
 family.father = new Person("John", "Smith");
 family.daughter = new Person("Emily", "Smith");
 
-console.table(family);
+Vls.table(family);

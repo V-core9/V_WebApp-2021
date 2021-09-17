@@ -1,4 +1,4 @@
-const Vls = {
+const V_Console = {
   mode: "dev",
   printLog: null,
   data: {
@@ -98,5 +98,7 @@ const Vls = {
     console.timeLog(label);
   },
 };
+
+const Vls = V_Console;
 
 module.exports = Vls;
