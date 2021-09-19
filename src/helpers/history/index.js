@@ -1,5 +1,5 @@
 /*jshint esversion: 8 */
-const { Vls } = require("../console/");
+const vCon = require("../console/");
 
 const V_History = {
   length: "",
@@ -24,7 +24,7 @@ const V_History = {
       }
       return true;
     } catch (error) {
-      Vls.error(error);
+      vCon.error(error);
       return error;
     }
   },
@@ -37,7 +37,7 @@ const V_History = {
       }
       return true;
     } catch (error) {
-      Vls.error(error);
+      vCon.error(error);
       return error;
     }
   },

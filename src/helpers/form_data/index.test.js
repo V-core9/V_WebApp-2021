@@ -1,6 +1,6 @@
 /*jshint esversion: 8 */
 const { Vfd } = require(".");
-const { Vls } = require("../console/");
+const vCon = require("../console/");
 
 const demoFormSample = {
   name: "demoFormSample",
@@ -25,11 +25,11 @@ const demoFormSample = {
 const VfdTest = () => {
   Vfd.addNewForm(demoFormSample);
 
-  Vls.log(Vfd);
+  vCon.log(Vfd);
 };
 
 //VfdTest();
 
-Vls.log(Vfd.formsList);
+vCon.log(Vfd.formsList);
 
 module.exports = VfdTest;

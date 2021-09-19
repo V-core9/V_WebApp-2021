@@ -1,6 +1,6 @@
 /*jshint esversion: 8 */
-const { vPerf, V_Performance } = require(".");
-const { Vls } = require("../console/");
+const vPerf = require(".");
+const vCon = require("../console/");
 
 const markerNameA = "example-marker-a";
 const markerNameB = "example-marker-b";
@@ -22,7 +22,7 @@ const perfTesting = () => {
       vPerf.measure("measure from navigation start to now");
 
       // Pull out all of the measurements.
-      Vls.log(vPerf.getEntriesByType());
+      vCon.log(vPerf.getEntriesByType());
 
       // Finally, clean up the entries.
       vPerf.clearMarks();

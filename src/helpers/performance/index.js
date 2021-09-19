@@ -1,9 +1,9 @@
 /*jshint esversion: 8 */
 //const { performance } = require("perf_hooks");
 
-const { Vls } = require("../console/");
+const vCon = require("../console/");
 
-const V_Performance = {
+const vPerf = {
   memory: performance.memory,
   onresourcetimingbufferfull: performance.onresourcetimingbufferfull,
   timeOrigin: performance.timeOrigin,
@@ -14,9 +14,9 @@ const V_Performance = {
         return false;
       }
       performance.clearMarks(name);
-      Vls.log("Cleared Marks");
+      vCon.log("Cleared Marks");
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
@@ -27,10 +27,10 @@ const V_Performance = {
         return false;
       }
       performance.clearMeasures(name);
-      Vls.log("Cleared Measures");
+      vCon.log("Cleared Measures");
       return true;
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
@@ -39,17 +39,17 @@ const V_Performance = {
       performance.clearResourceTimings();
       return entriesHelper;
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
   getEntries() {
     try {
       const entriesHelper = performance.getEntries();
-      Vls.log(entriesHelper);
+      vCon.log(entriesHelper);
       return entriesHelper;
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
@@ -60,7 +60,7 @@ const V_Performance = {
       }
       return performance.getEntriesByName(name);
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
@@ -76,8 +76,8 @@ const V_Performance = {
       performance.mark(name);
       return true;
     } catch (err) {
-      Vls.log(err);
-      Vls.trace();
+      vCon.log(err);
+      vCon.trace();
       return err;
     }
   },
@@ -91,7 +91,7 @@ const V_Performance = {
       if (endMark !== null)
         return performance.measure(name, undefined, endMark);
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
@@ -102,7 +102,7 @@ const V_Performance = {
     try {
       return performance.setResourceTimingBufferSize(maxSize);
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
@@ -152,11 +152,11 @@ const V_Performance = {
     }
   },
   toJSON() {
-    Vls.log(JSON.stringify(performance.toJSON()));
+    vCon.log(JSON.stringify(performance.toJSON()));
     return performance.toJSON();
   },
   buffer_full(event) {
-    Vls.log("WARNING: Resource Timing Buffer is FULL!");
+    vCon.log("WARNING: Resource Timing Buffer is FULL!");
     performance.setResourceTimingBufferSize(200);
   },
   init() {
@@ -165,9 +165,6 @@ const V_Performance = {
   },
 };
 
-V_Performance.init();
+vPerf.init();
 
-module.exports = {
-  V_Performance: V_Performance,
-  vPerf: V_Performance,
-};
+module.exports = vPerf;

@@ -1,31 +1,30 @@
 /*jshint esversion: 8 */
-const V_Console = {
-  mode: "dev",
-  printLog: null,
+const vCfg = require("../../../__vCfg");
+
+const printLog = vCfg.printConsole === true ? true : false;
+
+const vCon = {
+  mode: "default", //-> choose vCon running mode >>  <default> :: normal running mode ||
   data: {
     logList: [],
-  },
-  shouldLog() {
-    this.log = this.printLog === "dev" ? true : false;
-    return this.log;
   },
   log(msg = "Missing Data", type = null) {
     if (this.log) {
       switch (type) {
         case "error":
-          console.error(msg);
+          if (printLog) console.warn(msg);
           break;
 
         case "warn":
-          console.warn(msg);
+          if (printLog) console.warn(msg);
           break;
 
         case "info":
-          console.info(msg);
+          if (printLog) console.info(msg);
           break;
 
         default:
-          console.log(msg);
+          if (printLog) console.log(msg);
           break;
       }
     }
@@ -49,57 +48,55 @@ const V_Console = {
       console.clear();
       return true;
     } catch (error) {
-      console.log(error);
-      console.trace();
+      if (printLog) console.log(error);
+      if (printLog) console.trace();
       return error;
     }
   },
 
   //-COUNT-------
   count(label = null) {
-    console.count(label);
+    if (printLog) console.count(label);
   },
   countReset(label = null) {
-    console.countReset(label);
+    if (printLog) console.countReset(label);
   },
 
   dir(object = {}) {
-    console.dir(object);
+    if (printLog) console.dir(object);
   },
 
   //-TRACE-------
   trace() {
-    console.trace();
+    if (printLog) console.trace();
   },
 
   //-GROUPS-------
   group(label = null) {
-    console.group(label);
+    if (printLog) console.group(label);
   },
   groupEnd(label = null) {
-    console.groupEnd(label);
+    if (printLog) console.groupEnd(label);
   },
   groupCollapsed(label = null) {
-    console.groupCollapsed(label);
+    if (printLog) console.groupCollapsed(label);
   },
 
   //-TABLE-------
   table(label = null) {
-    console.table(label);
+    if (printLog) console.table(label);
   },
 
   //-TIME-------
   time(label = null) {
-    console.time(label);
+    if (printLog) console.time(label);
   },
   timeEnd(label = null) {
-    console.timeEnd(label);
+    if (printLog) console.timeEnd(label);
   },
   timeLog(label = null) {
-    console.timeLog(label);
+    if (printLog) console.timeLog(label);
   },
 };
 
-module.exports = {
-  Vls: V_Console,
-};
+module.exports = vCon;

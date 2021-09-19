@@ -1,4 +1,4 @@
-const { Vls } = require("../console/");
+const vCon = require("../console/");
 
 const V_Navigator = {
   activeVRDisplays: "",
@@ -126,7 +126,4 @@ V_Navigator.vendorSub = Navigator.vendorSub;
 V_Navigator.webdriver = Navigator.webdriver;
 V_Navigator.xr = Navigator.xr;
 
-module.exports = {
-  V_Navigator: V_Navigator,
-  Vnav: V_Navigator,
-};
+module.exports = { vNav: V_Navigator };

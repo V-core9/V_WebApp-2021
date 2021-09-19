@@ -1,43 +1,43 @@
 /*jshint esversion: 8 */
-const { Vls } = require(".");
+const vCon = require(".");
 
-Vls.log("? MINGW64 ~/_V_/App");
+vCon.log("? MINGW64 ~/_V_/App");
 
-Vls.log("yeaaaa");
+vCon.log("yeaaaa");
 
-Vls.log("Ouh EYEAAHAH");
+vCon.log("Ouh EYEAAHAH");
 
-Vls.info("? MINGW64 ~/_V_/App");
+vCon.info("? MINGW64 ~/_V_/App");
 
-Vls.info("yeaaaa");
+vCon.info("yeaaaa");
 
-Vls.info("Ouh EYEAAHAH");
+vCon.info("Ouh EYEAAHAH");
 
-Vls.warn("? MINGW64 ~/_V_/App");
+vCon.warn("? MINGW64 ~/_V_/App");
 
-Vls.warn("yeaaaa");
+vCon.warn("yeaaaa");
 
-Vls.warn("Ouh EYEAAHAH");
+vCon.warn("Ouh EYEAAHAH");
 
-Vls.count("? MINGW64 ~/_V_/App");
+vCon.count("? MINGW64 ~/_V_/App");
 
-Vls.count("yeaaaa");
+vCon.count("yeaaaa");
 
-Vls.count("Ouh EYEAAHAH");
+vCon.count("Ouh EYEAAHAH");
 
-Vls.group("? MINGW64 ~/_V_/App");
+vCon.group("? MINGW64 ~/_V_/App");
 
-Vls.group("yeaaaa");
+vCon.group("yeaaaa");
 
-Vls.group("Ouh EYEAAHAH");
+vCon.group("Ouh EYEAAHAH");
 
-Vls.groupEnd("? MINGW64 ~/_V_/App");
+vCon.groupEnd("? MINGW64 ~/_V_/App");
 
-Vls.groupEnd("yeaaaa");
+vCon.groupEnd("yeaaaa");
 
-Vls.groupEnd("Ouh EYEAAHAH");
+vCon.groupEnd("Ouh EYEAAHAH");
 
-Vls.table(["apples", "oranges", "bananas"]);
+vCon.table(["apples", "oranges", "bananas"]);
 
 function Person(firstName, lastName) {
   this.firstName = firstName;
@@ -46,7 +46,7 @@ function Person(firstName, lastName) {
 
 var me = new Person("John", "Smith");
 
-Vls.table(me);
+vCon.table(me);
 
 // an array of arrays
 
@@ -55,7 +55,7 @@ var people = [
   ["Jane", "Doe"],
   ["Emily", "Jones"],
 ];
-Vls.table(people);
+vCon.table(people);
 
 // an object whose properties are objects
 
@@ -65,4 +65,4 @@ family.mother = new Person("Jane", "Smith");
 family.father = new Person("John", "Smith");
 family.daughter = new Person("Emily", "Smith");
 
-Vls.table(family);
+vCon.table(family);

@@ -4,11 +4,12 @@ const app = express();
 const path = require("path");
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
-//const port = process.env.PORT || 3000;
-const port = 3030;
+const vCfg = require("./__vCfg");
 
-server.listen(port, () => {
-  console.log("Server listening at port %d", port);
+console.log(vCfg);
+
+server.listen(vCfg.port, () => {
+  console.log("Server listening at vCfg.port %d", vCfg.port);
 });
 
 // Routing

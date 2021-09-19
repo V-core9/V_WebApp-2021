@@ -1,49 +1,52 @@
 /*jshint esversion: 8 */
-const { Vls } = require("./helpers/console/");
+const vCfg = require("../__vCfg");
+const vCon = require("./helpers/console/");
 
-Vls.log("APP STARTED!");
+vCon.log("APP STARTED!");
 
-Vls.log("\n+-----------------------------------+\nVls:\n");
-Vls.log(Vls);
+vCon.log(vCfg);
+
+vCon.log("\n+-----------------------------------+\nvCon:\n");
+vCon.log(vCon);
 
 const { Vtl } = require("./helpers/history/");
 
-Vls.log("\n+-----------------------------------+\nVtl:\n");
-Vls.log(Vtl);
+vCon.log("\n+-----------------------------------+\nVtl:\n");
+vCon.log(Vtl);
 
 const VfdTest = require("./helpers/form_data/index.test");
 
-Vls.log("\n+-----------------------------------+\nVfdTest:\n");
-Vls.log(VfdTest());
+vCon.log("\n+-----------------------------------+\nVfdTest:\n");
+vCon.log(VfdTest());
 
 const perfTesting = require("./helpers/performance/index.test");
 
-Vls.log("\n+-----------------------------------+\nperfTesting:\n");
-Vls.log(perfTesting());
+vCon.log("\n+-----------------------------------+\nperfTesting:\n");
+vCon.log(perfTesting());
 
 const [vNavTest, vNavTest2] = require("./helpers/navigator/index.test");
 
-Vls.log("\n+-----------------------------------+\nvNavTest:\n");
-Vls.log(vNavTest());
+vCon.log("\n+-----------------------------------+\nvNavTest:\n");
+vCon.log(vNavTest());
 
 const Vnav = require("./helpers/navigator/");
 
-Vls.log("\n+-----------------------------------+\nVnav:\n");
-Vls.log(Vnav);
+vCon.log("\n+-----------------------------------+\nVnav:\n");
+vCon.log(Vnav);
 
-Vls.log("\n+-----------------------------------+\nvNavTest2:\n");
-Vls.log(vNavTest2);
+vCon.log("\n+-----------------------------------+\nvNavTest2:\n");
+vCon.log(vNavTest2);
 
 const perfData = window.performance.timing;
 
 const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-Vls.info("pageLoadTime  >>   " + pageLoadTime);
+vCon.info("pageLoadTime  >>   " + pageLoadTime);
 
 const connectTime = perfData.responseEnd - perfData.requestStart;
-Vls.info("connectTime  >>   " + connectTime);
+vCon.info("connectTime  >>   " + connectTime);
 
 const renderTime = perfData.domComplete - perfData.domLoading;
-Vls.info("renderTime  >>   " + renderTime);
+vCon.info("renderTime  >>   " + renderTime);
 
 // Catch errors since some browsers throw when using the new `type` option.
 // https://bugs.webkit.org/show_bug.cgi?id=209216

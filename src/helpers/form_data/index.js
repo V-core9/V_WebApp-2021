@@ -1,14 +1,14 @@
 /*jshint esversion: 8 */
-const { Vls } = require("../console/");
-const appCfg = require("../../app_config");
+const vCon = require("../console/");
+const appCfg = require("../../../__vCfg");
 
 const V_FormData = {
   formsList: [],
   addNewForm(form = null) {
     try {
       if (form === null) {
-        Vls.error(this);
-        Vls.trace();
+        vCon.error(this);
+        vCon.trace();
         return false;
       }
       document.body.innerHTML += form.template;
@@ -17,7 +17,7 @@ const V_FormData = {
 
       return this.formsList.push(form);
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
@@ -30,7 +30,7 @@ const V_FormData = {
       }
       return true;
     } catch (error) {
-      Vls.error(error);
+      vCon.error(error);
       return error;
     }
   },
@@ -39,57 +39,57 @@ const V_FormData = {
       this.data.delete(name);
       return true;
     } catch (error) {
-      Vls.error(error);
+      vCon.error(error);
       return error;
     }
   },
   entries() {
     try {
       const entriesHelper = this.data.entries();
-      Vls.log(entriesHelper);
+      vCon.log(entriesHelper);
       return entriesHelper;
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
   get(name) {
     try {
       const getHelper = this.data.get(name);
-      Vls.log(getHelper);
+      vCon.log(getHelper);
       return getHelper;
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
   getAll(name) {
     try {
       const getAllHelper = this.data.getAll(name);
-      Vls.log(getAllHelper);
+      vCon.log(getAllHelper);
       return getAllHelper;
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
   has(name) {
     try {
       const hasHelper = this.data.has(name);
-      Vls.log(hasHelper);
+      vCon.log(hasHelper);
       return hasHelper;
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
   keys() {
     try {
       const keysHelper = this.data.keys();
-      Vls.log(keysHelper);
+      vCon.log(keysHelper);
       return keysHelper;
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },
@@ -102,17 +102,17 @@ const V_FormData = {
       }
       return true;
     } catch (error) {
-      Vls.error(error);
+      vCon.error(error);
       return error;
     }
   },
   values() {
     try {
       const valuesHelper = this.data.values();
-      Vls.log(valuesHelper);
+      vCon.log(valuesHelper);
       return valuesHelper;
     } catch (err) {
-      Vls.error(err);
+      vCon.error(err);
       return err;
     }
   },

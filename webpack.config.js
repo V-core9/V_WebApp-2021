@@ -1,12 +1,15 @@
 const path = require("path");
+const vCfg = require("./__vCfg");
+const mode = vCfg.devMode ? "development" : "production";
 
 module.exports = {
-  mode: "development",
+  mode: mode,
   entry: {
-    app: "./src/app.js",
+    app_root: "./src/app_root.js",
+    app_demo_test: "./src/app_demo_test.js",
     //v_cursor: './[.v.]_dev_apps/_x1/SRC/helpers/v_cursor.js',
   },
-  target: "web",
+  target: vCfg.target,
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].v_pack.js",
