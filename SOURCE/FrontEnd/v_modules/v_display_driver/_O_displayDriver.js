@@ -1,10 +1,8 @@
+const vDomPrinter = require('../v_dom_printer/domPrinter')
 
+const homePageData = require('../../pages/homepage_config')
 
-var wnd = window;
-var doc = document;
-
-
-// requestAnimationFrame
+// requestAnimationFrame  
 var raf =
   window.requestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
@@ -14,8 +12,11 @@ var raf =
   };
 
 
-// V_DisplayDriver <=> AO_DisplayDriver => vDisplay |:|
+
+// V_DisplayDriver 
 const V_DisplayDriver = {
+  wnd: null,
+  doc: null,
   config: {
     mode: "hiding",
     debug: true
@@ -43,7 +44,7 @@ const V_DisplayDriver = {
   },
   listenForEvents() {
     //Self addig on dom load
-    document.onreadystatechange = function() {
+    document.onreadystatechange = function () {
       switch (document.readyState) {
         case "loading":
           // The document is still loading.;
@@ -88,7 +89,7 @@ const V_DisplayDriver = {
     //this.init();
     var notYetDone = 0;
     var testItems = vDisplay.data.page.sections;
-    console.log(testItems)
+    //console.log(testItems)
     if (typeof testItems !== "undefined") {
       if (testItems.length > 0) {
         testItems.forEach((element) => {
@@ -98,7 +99,7 @@ const V_DisplayDriver = {
               //console.log('Is ' + element.elemID + ' visible? YES')
               //element.call();
               if ((typeof element.render === 'undefined') || (element.lastUpdate > element.timeOfRender)) {
-                element.render = V_DomP(element);
+                element.render = vDomPrinter.returnTemplate(element);
                 element.timeOfRender = Date.now();
                 helpElem.innerHTML = element.render;
                 helpElem.style.minHeight = helpElem.clientHeight + "px";
@@ -121,7 +122,7 @@ const V_DisplayDriver = {
 
     if (notYetDone === 0) {
       console.log('Done! Detaching scroll event listener...')
-      window.removeEventListener("scroll", this.handler);
+      this.wnd.removeEventListener("scroll", this.handler);
     };
   },
   // requestAnimationFrame
@@ -134,26 +135,26 @@ const V_DisplayDriver = {
     var meta = this.data.page.meta;
     var sections = this.data.page.sections;
     console.log(meta);
-    document.title = meta.title;
+    this.doc.title = meta.title;
     var desc = document.createElement("meta");
     desc.setAttribute("content", meta.description);
     desc.setAttribute("name", "description");
-    document.head.appendChild(desc);
+    this.doc.head.appendChild(desc);
     var keyW = document.createElement("meta");
     keyW.setAttribute("content", meta.keywords);
     keyW.setAttribute("name", "keywords");
-    document.head.appendChild(keyW);
+    this.doc.head.appendChild(keyW);
   },
   isInUserView(el) {
     //console.log('FunctionCall >> [ function isInUserView(el) ] || [ Elem: ' + el + ' ]');
-    const scroll =window.scrollY || window.pageYOffset;
+    const scroll = this.wnd.scrollY || this.wnd.pageYOffset;
     var elem = document.querySelector(el);
     if (typeof elem !== "undefined") {
       const boundsTop = (elem ? elem.getBoundingClientRect().top : 0) + scroll;
 
       const viewport = {
         top: scroll,
-        bottom: scroll + window.innerHeight,
+        bottom: scroll + this.wnd.innerHeight,
       };
 
       const bounds = {
@@ -172,7 +173,7 @@ const V_DisplayDriver = {
     console.log('FunctionCall >> [ function preload() ]');
   },
   canPrintPage() {
-    if ((wnd) && (document)) {
+    if ((this.wnd) && (this.doc)) {
       return true;
     } else {
       this.init();
@@ -200,7 +201,7 @@ const V_DisplayDriver = {
         }
       }
 
-      document.body.innerHTML += `<div id="${uid}" class="page_section ${section.type}"></div>`;
+      this.doc.body.innerHTML += `<div id="${uid}" class="page_section ${section.type}"></div>`;
 
       section.elemID = uid;
       section.lastUpdate = Date.now();
@@ -208,13 +209,13 @@ const V_DisplayDriver = {
 
       if (stopPrint === false) {
 
-        section.render = V_DomP(section);
+        section.render = vDomPrinter.returnTemplate(section);
 
         this.maybeLoadStyle(section.type);
 
         document.getElementById(uid).innerHTML = section.render;
 
-        console.log(document.getElementById(uid).clientHeight);
+        console.log(document.getElementById(uid).clientHeight)
 
         document.getElementById(uid).style.minHeight = document.getElementById(uid).clientHeight + "px";
         section.timeOfRender = Date.now();
@@ -254,7 +255,7 @@ const V_DisplayDriver = {
     };
 
     if ((stylesNumber == 0) || (shouldLoadStyle)) {
-      this.styles = { name: type, style: V_DomS(type) };
+      this.styles = { name: type, style: vDomPrinter.getStyle(type) };
       console.log("STYLE LOADED :=: " + type);
       return true;
     }
@@ -265,47 +266,21 @@ const V_DisplayDriver = {
   init(page = null) {
     console.log('FunctionCall >> [ function initSSOSL() ]');
     try {
-      // requestAnimationFrame
-      //this.raf = this.wnd.requestAnimationFrame || this.wnd.webkitRequestAnimationFrame || this.wnd.mozRequestAnimationFrame || function(callback) { this.wnd.setTimeout(callback, 1000 / 60); };
-
+      this.wnd = window;
+      this.doc = document;
+    
       //this.handler();
       this.listenForEvents();
-      wnd.addEventListener("load", vDisplay.handler);
-      wnd.addEventListener("scroll", vDisplay.handler);
+      this.wnd.addEventListener("load", vDisplay.handler);
+      this.wnd.addEventListener("scroll", vDisplay.handler);
     } catch (error) {
       console.error(error);
     }
   }
-}
+};
 
 let vDisplay = V_DisplayDriver;
 
 vDisplay.init();
 
 
-const homePageData = require('../../pages/homepage_config');
-
-
-const vDomPrinter = require('../v_dom_printer/domPrinter');
-
-
-function returnTemplate(section) {
-  return vDomPrinter.returnTemplate(section);
-}
-
-
-function getStyle(templateName) {
-  return vDomPrinter.getStyle(templateName);
-}
-
-let V_DomP = returnTemplate;
-let V_DomS = getStyle;
-
-
-
-window.onload = () => {
-  vDisplay.page = homePageData;
-  vDisplay.loadPage();
-}
-
-module.exports = V_DisplayDriver;

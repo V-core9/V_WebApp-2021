@@ -2,10 +2,11 @@ const vDomPrinter = {
   elements: require("./elements"),
   templates: require("./templates/templates_ARRAY"),
 
-  findByName(templateObject = null) {
+  findByName(objName = null) {
     var resp = false;
     this.templates.forEach(item => {
-      if (templateObject.name == item.name) {
+      console.log(item);
+      if (objName == item.name) {
         console.log("FOUND SECTION TEMPLATE");
         resp = item;
       }
@@ -15,8 +16,9 @@ const vDomPrinter = {
 
   returnTemplate(templateItem = null) {
     var result = false;
-    if (templateItem !== null) {
-      result = findByName(templateItem.name).view(templateObject);
+    if (templateItem.type !== null) {
+      result = this.findByName(templateItem.type);
+      result = result.html(templateItem.data);
     } else {
       console.warn("ERROR TYPE EMPTY");
       result = false;
@@ -27,7 +29,7 @@ const vDomPrinter = {
   getStyle(templateName = null) {
     var result = false;
     if (templateName !== null) {
-      result = findByName(templateName).paint();
+      result = this.findByName(templateName).css();
     } else {
       console.warn("ERROR TYPE EMPTY");
       result = false;

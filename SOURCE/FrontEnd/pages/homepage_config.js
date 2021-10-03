@@ -1,13 +1,4 @@
-//╔═══════════════════════════════════════════════════════════════════════════════╗
-//║ ♠ File Name: app.js                                                           ║
-//║ ↔ Location: <: public_root :>/ app.js                                         ║
-//║ Σ Description:                                                                ║
-//║     → In case this lives more than few days, better have something prepared   ║
-//╟       than few days, better have something prepared have as   ╔═══════════════╣
-//║       than few days, better have something prepared.          ║ √ 23.01.2021. ║
-//╚═══════════════════════════════════════════════════════════════╩═══════════════╝
-
-const page_home = {
+module.exports = {
   meta: {
     title: "homepage",
     description: "Some demo page description",
@@ -24,7 +15,7 @@ const page_home = {
     color: "#d0d0d0"
   },
   sections: [{
-      type: "hero_main",
+      type: "base_hero_01",
       data: {
         title: "Hello and welcome!",
         subtitle: "11111111111Space holder for subtitle....",
@@ -35,7 +26,7 @@ const page_home = {
         image: {
           width: 360,
           height: 360,
-          url: "./logo.png",
+          url: "/assets/logo.png",
           alt: "YEAAA MIKI"
         },
         background: {
@@ -45,7 +36,7 @@ const page_home = {
       }
     },
     {
-      type: "hero_main",
+      type: "base_hero_01",
       data: {
         title: "SECOND SECTION TITLE",
         subtitle: "22222222Space holder for subtitle....",
@@ -56,7 +47,7 @@ const page_home = {
         image: {
           width: 180,
           height: 180,
-          url: "./logo.png",
+          url: "/assets/logo.png",
           alt: "MIKI222222"
         },
         background: {
@@ -66,7 +57,7 @@ const page_home = {
       }
     },
     {
-      type: "hero_main",
+      type: "base_hero_01",
       data: {
         title: "3333 SECTION 3333 TITLE",
         subtitle: "3333333S3pace3 hold3e3r3 33for subtit3e..3..",
@@ -82,17 +73,17 @@ const page_home = {
         image: {
           width: 650,
           height: 400,
-          url: "./pageBuilder_LoadTest1.png",
+          url: "/assets/pageBuilder_LoadTest1.png",
           alt: "YEAAA MIKI"
         },
         background: {
           type: "image",
-          url: "./logo.png"
+          url: "/assets/logo.png"
         }
       }
     },
     {
-      type: "newsletter_main",
+      type: "base_newsletter_01",
       data: {
         title: "4444444 SECTION 3333 TITLE",
         subtitle: "44444S3pace3 hold3e3r3 33for subtit3e..3..",
@@ -111,16 +102,16 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "./logo.png"
+          url: "/assets/logo.png"
         },
         background: {
           type: "image",
-          url: "./logo.png"
+          url: "/assets/logo.png"
         }
       }
     },
     {
-      type: "hero_main",
+      type: "base_hero_01",
       data: {
         title: "55555555555 SECTION 3333 TITLE",
         subtitle: "555555555555pace3 hold3e3r3 33for subtit3e..3..",
@@ -138,16 +129,16 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "./logo.png"
+          url: "/assets/logo.png"
         },
         background: {
           type: "image",
-          url: "./logo.png"
+          url: "/assets/logo.png"
         }
       }
     },
     {
-      type: "hero_main",
+      type: "base_hero_01",
       data: {
         title: "6666666666 SECTION 3333 TITLE",
         subtitle: "666666666 hold3e3r3 33for subtit3e..3..",
@@ -165,17 +156,17 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "./pageBuilder_LoadTest1.png",
+          url: "/assets/pageBuilder_LoadTest1.png",
           alt: "YEAAA MIKI"
         },
         background: {
           type: "image",
-          url: "./logo.png"
+          url: "/assets/logo.png"
         }
       }
     },
     {
-      type: "newsletter_main",
+      type: "base_newsletter_01",
       data: {
         title: "77777777777 SECTION 3333 TITLE",
         subtitle: "7777777777 hold3e3r3 33for subtit3e..3..",
@@ -194,16 +185,16 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "./logo.png"
+          url: "/assets/logo.png"
         },
         background: {
           type: "image",
-          url: "./logo.png"
+          url: "/assets/logo.png"
         }
       }
     },
     {
-      type: "newsletter_main",
+      type: "base_newsletter_01",
       data: {
         title: "888888 SECTION 3333 TITLE",
         subtitle: "88888 hold3e3r3 33for subtit3e..3..",
@@ -222,16 +213,16 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "./logo.png"
+          url: "/assets/logo.png"
         },
         background: {
           type: "image",
-          url: "./logo.png"
+          url: "/assets/logo.png"
         }
       }
     },
     {
-      type: "newsletter_main",
+      type: "base_newsletter_01",
       data: {
         title: "9999999 SECTION 3333 TITLE",
         subtitle: "99999999 hold3e3r3 33for subtit3e..3..",
@@ -250,16 +241,16 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "./logo.png"
+          url: "/assets/logo.png"
         },
         background: {
           type: "image",
-          url: "./logo.png"
+          url: "/assets/logo.png"
         }
       }
     },
     {
-      type: "newsletter_main",
+      type: "base_newsletter_01",
       data: {
         title: "10 SECTION 3333 TITLE",
         subtitle: "10 hold3e3r3 33for subtit3e..3..",
@@ -278,16 +269,16 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "./pageBuilder_LoadTest1.png"
+          url: "/assets/pageBuilder_LoadTest1.png"
         },
         background: {
           type: "image",
-          url: "./logo.png"
+          url: "/assets/logo.png"
         }
       }
     },
     {
-      type: "about_default",
+      type: "base_about_us_01",
       data: {
         title: "YYYYYYYYY SECTION 3333 TITLE",
         subtitle: "YYYYYYYYYYY hold3e3r3 33for subtit3e..3..",
@@ -306,16 +297,16 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "./logo.png"
+          url: "/assets/logo.png"
         },
         background: {
           type: "image",
-          url: "./logo.png"
+          url: "/assets/logo.png"
         }
       }
     },
     {
-      type: "about_default",
+      type: "base_about_us_01",
       data: {
         title: "ZZZZZZZZZZZZZ SECTION 3333 TITLE",
         subtitle: "ZZZZZZZZZZ hold3e3r3 33for subtit3e..3..",
@@ -334,24 +325,14 @@ const page_home = {
         image: {
           width: 50,
           height: 50,
-          url: "./logo.png"
+          url: "/assets/logo.png"
         },
         background: {
           type: "image",
-          url: "./logo.png"
+          url: "/assets/logo.png"
         }
       }
     }
   ]
 }
 
-window.onload = () => {
-  aoDisplay.page = page_home;
-  aoDisplay.loadPage();
-}
-
-//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-//▌   ! END OF FILE !            ▐▀▀▀         ▐▀▀▀             ! END OF FILE !    ▐
-//▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄      ▐▀▀▀  ▐▀▀▀▀▌ ▐▀▀▀         ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▐
-//▌ ♠ File Name: app.js   ▐      ▐▄▄▄  ▐▄▄▄▄▌ ▐            ▌  ☺ Author: Slavko V. ▐
-//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
