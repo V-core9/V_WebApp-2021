@@ -1,6 +1,7 @@
 const path = require("path");
 const appConfig = require("./__appConfig");
 const mode = appConfig.devMode ? "development" : "production";
+const cleanOutput = !appConfig.devMode;
 
 module.exports = {
   mode: mode,
@@ -13,6 +14,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "PUBLIC"),
     filename: "[name].V-core9.js",
+    clean: cleanOutput,
   },
   module: {
     rules: [
