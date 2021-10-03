@@ -1,4 +1,4 @@
-const templates = require("./templates_list");
+const templates = require("./templates_OBJECT");
 
 
 
