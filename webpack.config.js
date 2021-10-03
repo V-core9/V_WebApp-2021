@@ -1,15 +1,15 @@
 const path = require("path");
-const vCfg = require("./__vCfg");
-const mode = vCfg.devMode ? "development" : "production";
+const appConfig = require("./__appConfig");
+const mode = appConfig.devMode ? "development" : "production";
 
 module.exports = {
   mode: mode,
   entry: {
-    app_root: "./SOURCE/App/app_root.js",
-    V_DisplayDriver: "./SOURCE/v_modules/v_display_driver/displayDriver.js",
-    V_DomPrinter: "./SOURCE/v_modules/v_dom_printer/domPrinter.js",
+    rootApplication: "./SOURCE/FrontEnd/app_client.js",
+    V_DisplayDriver: "./SOURCE/FrontEnd/v_modules/v_display_driver/displayDriver.js",
+    V_DomPrinter: "./SOURCE/FrontEnd/v_modules/v_dom_printer/domPrinter.js",
   },
-  target: vCfg.target,
+  target: appConfig.target,
   output: {
     path: path.resolve(__dirname, "PUBLIC"),
     filename: "[name].V-core9.js",

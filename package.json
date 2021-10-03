@@ -18,7 +18,7 @@
     "start_server": " start bash -c \" node  SOURCE/BackEnd/app_server.js \"  ",
     "start_app": "  bash -c \" npm run build  \" &&  bash -c \" npm run start_server  \" ",
     "start_dev": "  start bash -c \" nodemon --exec npm run build  \" &&  bash -c \" npm run start_server  \"  ",
-    "build": " bash -c \" npx webpack \" && bash -c \" node SOURCE/FrontEnd/v_modules/autorefresh_browser/json_updater.js; \"  && bash -c \" node-sass -r SOURCE/FrontEnd/scss -o PUBLIC/assets/style/css  \"  "
+    "build": " bash -c \" rm -r -f ./PUBLIC/* ; cp -r -f ./SOURCE/static/* ./PUBLIC/ ; \" && bash -c \" npx webpack \" && bash -c \" node SOURCE/FrontEnd/v_modules/autorefresh_browser/json_updater.js; \"  && bash -c \" node-sass -r SOURCE/FrontEnd/scss -o PUBLIC/assets/style/css  \"  "
   },
   "repository": {
     "type": "git",
