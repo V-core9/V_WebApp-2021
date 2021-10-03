@@ -1,5 +1,5 @@
 const arBaseConfig = {
-  arFileUrl  :  './PUBLIC/autoreload_info.json',
+  arFileUrl  :  '../../../../PUBLIC/autoReloadInfo.json',
   default: {
     default_reload_interval: 2500,
     default_reload_delay: 2000,

@@ -1,7 +1,7 @@
 const browserReloader = {
   refresh_time : 5000,    // -> [Milliseconds] -- [ time between check requests ] 
   reload_delay : 1500,    // -> [Milliseconds] -- [ basically a time that can be extended for different purposes && even used to block reload ] 
-  url: "/autoreload_info.json",
+  url: "/autoReloadInfo.json",
   data: null,
   runner: {
     interval: null,
