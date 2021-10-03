@@ -25,9 +25,9 @@ console.log(vDomPrinter.elements.P("767/   /DOM/elements/index.test.js"));
 
 console.log(vDomPrinter.templates);
 
-console.log(vDomPrinter.templates.base_hero_01());
-console.log(vDomPrinter.templates.base_newsletter_01());
+console.log(vDomPrinter.templates.base_hero_01.html());
+console.log(vDomPrinter.templates.base_newsletter_01.html());
 
 
-console.log(vDomPrinter.templates.base_hero_01());
-console.log(vDomPrinter.templates.base_newsletter_01());
+console.log(vDomPrinter.templates.base_hero_01.css());
+console.log(vDomPrinter.templates.base_newsletter_01.css());
