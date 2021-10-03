@@ -1,5 +1,3 @@
-const missCon = "[_missing_content_]";
-
 const base_hero_01 = {
   name: "base_hero_01",
   html: (section = { title: null, subtitle: null, button: { do: null, text: null }, image:{url: "#",width:"auto",height:"auto",alt: null} }) => {

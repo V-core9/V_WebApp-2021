@@ -3,7 +3,8 @@ const V_DomPrinter = {
     name: "V_DomPrinter",
     author: "_.V._"
   },
-  templates: [{
+  templates: [
+    {
       name: "hero_main",
       view(section) {
         return `<div class="section_side">
@@ -64,15 +65,22 @@ const V_DomPrinter = {
       }
     }
   ],
-  returnTemplate(section = null) {
-    var result = false;
-    if (section !== null) {
+
+  findByName(templateObject = null) {
+      var resp = false;
       this.templates.forEach(item => {
-        if (section.type == item.name) {
+        if (templateObject.name == item.name) {
           console.log("FOUND SECTION TEMPLATE");
-          result = item.view(section.data);
+          resp = item;
         }
-      })
+      });
+      return resp
+  },
+
+  returnTemplate( templateItem = null) {
+    var result = false;
+    if (templateItem !== null) {
+      result = findByName(templateItem.name).view(templateObject);
     } else {
       console.warn("ERROR TYPE EMPTY");
       result = false;
@@ -80,15 +88,10 @@ const V_DomPrinter = {
     return result;
   },
 
-  getStyle(type = null) {
+  getStyle(templateName = null) {
     var result = false;
-    if (type !== null) {
-      this.templates.forEach(item => {
-        if (type == item.name) {
-          console.log("FOUND SECTION STYLE");
-          result = item.paint();
-        }
-      })
+    if (templateName !== null) {
+      result = findByName(templateName).paint();
     } else {
       console.warn("ERROR TYPE EMPTY");
       result = false;
