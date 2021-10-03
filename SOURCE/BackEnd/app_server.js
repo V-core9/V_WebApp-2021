@@ -7,7 +7,7 @@ const app = express();
 const server = require("http").createServer(app);
 
 // Load Configuration
-const appConfig = require("./__appConfig");
+const appConfig = require("../../__appConfig");
 
 console.log(appConfig);
 
