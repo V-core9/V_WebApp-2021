@@ -19,6 +19,7 @@
     "webpack-cli": "^4.8.0"
   },
   "scripts": {
+    "ngrok_tunnel": " start bash -c \" cd system ; curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip > ngrok_win.zip ; unzip ngrok_win.zip ; rm ngrok_win.zip  \" && exit 1 ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start_server": " start bash -c \" node  SOURCE/BackEnd/app_server.js \"  ",
     "start_app": "  bash -c \" npm run build  \" &&  bash -c \" npm run start_server  \" ",
