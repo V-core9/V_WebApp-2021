@@ -5,13 +5,18 @@
   "main": "app_server.js",
   "dependencies": {
     "compression": "^1.7.4",
-    "express": "^4.17.1",
-    "lodash": "^4.17.21",
-    "node-sass": "^6.0.1",
-    "webpack": "^5.53.0",
-    "webpack-cli": "^4.8.0",
     "css-loader": "^6.3.0",
-    "style-loader": "^3.3.0"
+    "express": "^4.17.1",
+    "is-online": "^9.0.1",
+    "jshint": "^2.13.1",
+    "lodash": "^4.17.21",
+    "node-notifier": "^10.0.0",
+    "node-sass": "^6.0.1",
+    "page-fps": "^1.0.2",
+    "style-loader": "^3.3.0",
+    "web-vitals": "^2.1.0",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,6 +35,5 @@
   "bugs": {
     "url": "https://github.com/V-core9/App_2021/issues"
   },
-  "homepage": "https://github.com/V-core9/App_2021#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/V-core9/App_2021#readme"
 }

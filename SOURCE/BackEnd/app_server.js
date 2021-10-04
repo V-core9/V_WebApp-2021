@@ -30,5 +30,5 @@ app.get('/hello', function (req, res) {
 })
 
 app.get('/:page_slug', function (req, res) {
-  res.send('page_slug  >>  '+ page_slug);
+  res.send('page_slug  >>  '+req.params.page_slug);
 })
