@@ -1,23 +1,24 @@
 {
-  "name": "App_2021",
+  "name": "v_app_demo",
   "version": "1.0.0",
   "description": "A simple chat demo for Socket.IO",
   "main": "app_server.js",
   "dependencies": {
-    "express": "~4.17.1",
-    "socket.io": "^4.0.0",
-    "css-loader": "^6.2.0",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
     "lodash": "^4.17.21",
     "node-sass": "^6.0.1",
-    "style-loader": "^3.2.1",
     "webpack": "^5.53.0",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "css-loader": "^6.3.0",
+    "style-loader": "^3.3.0"
   },
   "scripts": {
-    "start": "node app_server.js",
-    "dev_mode": "start bash -c \" nodemon app_server.js \" ",
-    "webpack": "bash -c \" npx webpack --config webpack.config.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start_server": " start bash -c \" node  SOURCE/BackEnd/app_server.js \"  ",
+    "start_app": "  bash -c \" npm run build  \" &&  bash -c \" npm run start_server  \" ",
+    "start_dev": "  start bash -c \" nodemon --exec npm run build  \" &&  bash -c \" npm run start_server  \"  ",
+    "build": " bash -c \" rm -r -f ./PUBLIC/* \" && bash -c \" npx webpack \" && bash -c \" node SOURCE/FrontEnd/v_modules/autorefresh_browser/json_updater.js; \"  && bash -c \" node-sass -r SOURCE/FrontEnd/scss -o PUBLIC/assets/style/css  \" && bash -c \" cp -r -f ./SOURCE/static/* ./PUBLIC/ \"   "
   },
   "repository": {
     "type": "git",
