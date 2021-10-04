@@ -25,3 +25,10 @@ app.use(compression())
 // Routing
 app.use(express.static(path.join(__dirname, "../../PUBLIC")));
 
+app.get('/hello', function (req, res) {
+  res.send('hello world');
+})
+
+app.get('/:page_slug', function (req, res) {
+  res.send('page_slug  >>  '+ page_slug);
+})

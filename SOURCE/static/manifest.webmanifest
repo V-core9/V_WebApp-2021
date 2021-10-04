@@ -1,0 +1,103 @@
+{
+  "name": "V_core9.tech",
+  "short_name": "v-core9",
+  "lang": "en",
+  "description": "💻 - Tech Enthusiast - [ no sleel only code ] ⚡ - Full Stack Developer 🎨 - Frontend Dev/Designer ⛹ - Gamer [ even code is a game ]",
+  "start_url": "/",
+  "scope": "/",
+  "background_color": "#101525",
+  "theme_color": "#2196f3",
+  "dir": "ltr",
+  "display": "standalone",
+  "orientation": "landscape",
+  "categories": ["programming", "development", "web"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/assets/img/icons/android-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/img/icons/apple-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/apple-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/img/icons/apple-icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icons/apple-icon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "/assets/img/icons/apple-icon-114x114.png",
+      "type": "image/png",
+      "sizes": "114x114"
+    },
+    {
+      "src": "/assets/img/icons/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/assets/img/icons/apple-icon-76x76.png",
+      "type": "image/png",
+      "sizes": "76x76"
+    },
+    {
+      "src": "/assets/img/icons/apple-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/assets/img/icons/apple-icon-60x60.png",
+      "type": "image/png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "/assets/img/icons/apple-icon-57x57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "/assets/img/icons/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/assets/img/icons/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/images/Screenshot_1.png",
+      "sizes": "778x920",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/Screenshot_2.png",
+      "sizes": "1875x1079",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/Screenshot_3.png",
+      "sizes": "360x360",
+      "type": "image/png"
+    }
+  ]
+}
