@@ -1,6 +1,7 @@
 
 const path = require("path");
 let fs = require("fs")
+const vFileExplorer = require(path.join(__dirname, "./v_modules/fileExplorer/fs_explorer"))
 
 // Setup basic express server
 var compression = require('compression')
@@ -26,10 +27,10 @@ app.use(express.static(path.join(__dirname, "../../PUBLIC")));
 // Get page by slug
 app.get('/Vadmin', function (req, res) {
   var page = fs.readFileSync(path.join(__dirname, "../../PUBLIC/index.html"));
-  var pageInfo = '<script>' + JSON.stringify({ appConfig: appConfig, page_slug: req.params.page_slug, response_timestamp: Date.now() }, true, 2) + '</script>';
+  var listOfFiles = vFileExplorer(path.join(__dirname, "../../"));
+  var pageInfo =`<script>const pageResponse = { appConfig: ${appConfig}, page_slug: ${req.params.page_slug}, response_timestamp: ${Date.now()} , files: ${listOfFiles}}, true, 2)</script>`;
   res.send(pageInfo + "ADMIN PAGE" + page);
 });
-
 
 //-> PUBLIC 
 
