@@ -32,13 +32,14 @@ module.exports = {
     background: "darkgreen",
     color: "#d0d0d0"
   },
-  sections: [{
+  sections: [
+    {
     type: "base_hero_01",
     data: {
-      title: "Hello and welcome!",
-      subtitle: "11111111111Space holder for subtitle....",
+      title: "Welcome to the WebTech Demo!",
+      subtitle: "<author>V-core9</author> presents this abomination to the world. Stay tuned there is bunch of stuff to add.",
       button: {
-        text: "Join Today!",
+        text: "SUPPORT",
         do: "testCallbackFunction()"
       },
       image: {
@@ -50,6 +51,46 @@ module.exports = {
       background: {
         type: "color",
         url: "#152030"
+      }
+    }
+  },
+  {
+    type: "base_about_us_01",
+    data: {
+      title: "Example About Us Section",
+      subtitle: "Some Random Text To Fill In Data",
+      text: "starting start bash  npm run build && npm run start_server clean exit - waiting for changes before restart restarting due to changes...",
+      background: {
+        type: "image",
+        url: "/assets/logo.png"
+      }
+    }
+  },
+  {
+    type: "base_newsletter_01",
+    data: {
+      title: "Join Our NEWSLETTER >>",
+      subtitle: "Get hot info about latest features, updates, and much more.",
+      text: "Of course, the design of your newsletter will depend on your brand, as well as the message. For instance, you might want to create a colorful, attention-grabbing newsletter!",
+      button: {
+        text: "Joi3n Today3!",
+        style: {
+          background: "orange",
+          color: "red",
+          size: "L"
+        },
+        do() {
+          alert('Join 3333333 alerting!');
+        }
+      },
+      image: {
+        width: 50,
+        height: 50,
+        url: "/assets/logo.png"
+      },
+      background: {
+        type: "image",
+        url: "/assets/logo.png"
       }
     }
   },
@@ -101,11 +142,10 @@ module.exports = {
     }
   },
   {
-    type: "base_newsletter_01",
+    type: "base_hero_01",
     data: {
-      title: "4444444 SECTION 3333 TITLE",
-      subtitle: "44444S3pace3 hold3e3r3 33for subtit3e..3..",
-      text: "qw qwasasxcs qw eqwdsa daw qewdwaswd asw aqsdas dwaqedasdw   waasdcsad was w adsd aw sdeaqsd asw asdad asd",
+      title: "55555555555 SECTION 3333 TITLE",
+      subtitle: "555555555555pace3 hold3e3r3 33for subtit3e..3..",
       button: {
         text: "Joi3n Today3!",
         style: {
@@ -129,26 +169,11 @@ module.exports = {
     }
   },
   {
-    type: "base_hero_01",
+    type: "base_about_us_01",
     data: {
-      title: "55555555555 SECTION 3333 TITLE",
-      subtitle: "555555555555pace3 hold3e3r3 33for subtit3e..3..",
-      button: {
-        text: "Joi3n Today3!",
-        style: {
-          background: "orange",
-          color: "red",
-          size: "L"
-        },
-        do() {
-          alert('Join 3333333 alerting!');
-        }
-      },
-      image: {
-        width: 50,
-        height: 50,
-        url: "/assets/logo.png"
-      },
+      title: "Example About Us Section",
+      subtitle: "Some Random Text To Fill In Data",
+      text: "starting start bash  npm run build && npm run start_server clean exit - waiting for changes before restart restarting due to changes...",
       background: {
         type: "image",
         url: "/assets/logo.png"
@@ -240,6 +265,18 @@ module.exports = {
     }
   },
   {
+    type: "base_about_us_01",
+    data: {
+      title: "Example About Us Section",
+      subtitle: "Some Random Text To Fill In Data",
+      text: "starting start bash  npm run build && npm run start_server clean exit - waiting for changes before restart restarting due to changes...",
+      background: {
+        type: "image",
+        url: "/assets/logo.png"
+      }
+    }
+  },
+  {
     type: "base_newsletter_01",
     data: {
       title: "9999999 SECTION 3333 TITLE",
@@ -294,57 +331,34 @@ module.exports = {
         url: "/assets/logo.png"
       }
     }
-  },
-  {
-    type: "base_about_us_01",
+    },
+    {
+    type: "base_hero_alt_01",
     data: {
-      title: "YYYYYYYYY SECTION 3333 TITLE",
-      subtitle: "YYYYYYYYYYY hold3e3r3 33for subtit3e..3..",
-      text: "qw qwasasxcs qw eqwdsa daw qewdwaswd asw aqsdas dwaqedasdw   waasdcsad was w adsd aw sdeaqsd asw asdad asd",
+      title: "Welcome to the WebTech Demo!",
+      subtitle: "<author>V-core9</author> presents this abomination to the world. Stay tuned there is bunch of stuff to add.",
       button: {
-        text: "YYYYYY Today3!",
-        style: {
-          background: "orange",
-          color: "red",
-          size: "L"
-        },
-        do() {
-          alert('Join YYYYY alerting!');
-        }
+        text: "SUPPORT",
+        do: "testCallbackFunction()"
       },
       image: {
-        width: 50,
-        height: 50,
-        url: "/assets/logo.png"
+        width: 360,
+        height: 360,
+        url: "/assets/logo.png",
+        alt: "YEAAA MIKI"
       },
       background: {
-        type: "image",
-        url: "/assets/logo.png"
+        type: "color",
+        url: "#152030"
       }
     }
   },
   {
     type: "base_about_us_01",
     data: {
-      title: "ZZZZZZZZZZZZZ SECTION 3333 TITLE",
-      subtitle: "ZZZZZZZZZZ hold3e3r3 33for subtit3e..3..",
-      text: "qw qwasasxcs qw eqwdsa daw qewdwaswd asw aqsdas dwaqedasdw   waasdcsad was w adsd aw sdeaqsd asw asdad asd",
-      button: {
-        text: "Joi3n Today3!",
-        style: {
-          background: "orange",
-          color: "red",
-          size: "L"
-        },
-        do() {
-          alert('Join ZZZZZZZZZZZ alerting!');
-        }
-      },
-      image: {
-        width: 50,
-        height: 50,
-        url: "/assets/logo.png"
-      },
+      title: "Example About Us Section",
+      subtitle: "Some Random Text To Fill In Data",
+      text: "starting start bash  npm run build && npm run start_server clean exit - waiting for changes before restart restarting due to changes...",
       background: {
         type: "image",
         url: "/assets/logo.png"

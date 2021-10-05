@@ -32,7 +32,23 @@ module.exports = {
     background: "darkgreen",
     color: "#d0d0d0"
   },
-  sections: [{
+  sections: [
+  {
+    type: "admin_base_list_01",
+    data: {
+      title: "V_ADMIN PAGE : _ _ _",
+      subtitle: "Admin subtitle just to fill in space.",
+      button: {
+        text: "Refresh",
+        do: "refreshStats()"
+      },
+      background: {
+        type: "color",
+        url: "#152030"
+      }
+    }
+  },
+  {
     type: "base_hero_01",
     data: {
       title: "Hello and welcome!",
