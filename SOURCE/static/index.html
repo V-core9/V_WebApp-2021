@@ -14,7 +14,6 @@
 
   <link href="/assets/style/css/main_defaults.css" rel="stylesheet">
   <script src="/rootApplication.V-core9.js"></script>
-  <script src="/V_DomPrinter.V-core9.js"></script>
   <script src="/V_DisplayDriver.V-core9.js"></script>
 
   <style> 
@@ -23,10 +22,15 @@
       }
 
       img {
-        width: calc(100% - var(--default-padding) );
+        width: calc(100% - var(--default-padding) - var(--default-padding) );
         height: auto;
       }
   </style>
+  <script>
+    function testCallbackFunction(msg = "Empty msg.") {
+      alert(msg)
+    }
+  </script>
 </head>
 
 <body>
