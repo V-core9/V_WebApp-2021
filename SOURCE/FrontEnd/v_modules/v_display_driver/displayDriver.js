@@ -132,9 +132,10 @@ const V_DisplayDriver = {
   loadPage() {
     this.canPrintPage();
     var meta = this.data.page.meta;
+    var title = this.data.page.title;
     var sections = this.data.page.sections;
     console.log(meta);
-    document.title = meta.title;
+    document.title = title;
     var desc = document.createElement("meta");
     desc.setAttribute("content", meta.description);
     desc.setAttribute("name", "description");

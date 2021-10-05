@@ -25,13 +25,13 @@ console.log(vDomPrinter.elements.P("767/   /DOM/elements/index.test.js"));
 
 console.log(vDomPrinter.templates);
 
-console.log(vDomPrinter.templates.base_about_us_01.html());
+console.log(vDomPrinter.templates.base_about_us_01.view());
 console.log(vDomPrinter.templates.base_about_us_01.css());
 
-console.log(vDomPrinter.templates.base_hero_01.html());
+console.log(vDomPrinter.templates.base_hero_01.view());
 console.log(vDomPrinter.templates.base_hero_01.css());
 
-console.log(vDomPrinter.templates.base_newsletter_01.html());
+console.log(vDomPrinter.templates.base_newsletter_01.view());
 console.log(vDomPrinter.templates.base_newsletter_01.css());
 
 
@@ -49,7 +49,7 @@ var BAU_01 = {
 }
 
 // << Returns HTML filled in with data....
-console.log(vDomPrinter.templates.base_about_us_01.html(BAU_01));
+console.log(vDomPrinter.templates.base_about_us_01.view(BAU_01));
 
 
 
@@ -72,7 +72,7 @@ var BH_01 = {
 }
 
 // << Returns HTML filled in with data....
-console.log(vDomPrinter.templates.base_hero_01.html(BH_01));
+console.log(vDomPrinter.templates.base_hero_01.view(BH_01));
 
 
 
@@ -85,5 +85,5 @@ var BNL_01 = {
 }
 
 // << Returns HTML filled in with data....
-console.log(vDomPrinter.templates.base_newsletter_01.html(BNL_01));
+console.log(vDomPrinter.templates.base_newsletter_01.view(BNL_01));
 
