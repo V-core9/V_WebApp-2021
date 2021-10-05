@@ -1,8 +1,8 @@
-const OrderedList = require("./index");
+const OL = require("./index");
 
 
-console.log(OrderedList);
-console.log(OrderedList());
-console.log(OrderedList("Ye111111a some content for OrderedList to fill!!!"));
-console.log(OrderedList([]));
-console.log(OrderedList(["yeaaa","more","info"]));
+console.log(OL);
+console.log(OL());
+console.log(OL("Ye111111a some content for OL to fill!!!"));
+console.log(OL([]));
+console.log(OL(["yeaaa","more","info"]));

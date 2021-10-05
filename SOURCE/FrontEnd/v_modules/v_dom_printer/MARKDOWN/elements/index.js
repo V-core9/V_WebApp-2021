@@ -6,4 +6,10 @@ module.exports = {
   H4 : require("./h4"),
   H5 : require("./h5"),
   P : require("./p"),
+  UL : require("./ul"),
+  OL : require("./ol"),
+  HR : require("./hr"),
+  CODE : require("./code"),
+  BOLD : require("./_bold"),
+  ITALIC : require("./_italic"),
 }

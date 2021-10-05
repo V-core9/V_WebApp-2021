@@ -1,4 +1,4 @@
-const OrderedList = (elemOL = []) => {
+const OL = (elemOL = []) => {
   var helperNumber = 1;
   var response = "";
   console.log(typeof elemOL )
@@ -19,4 +19,4 @@ const OrderedList = (elemOL = []) => {
   return response;
 };
 
-module.exports = OrderedList;
+module.exports = OL;

@@ -1,4 +1,4 @@
-const UnorderedList = (elemOL = []) => {
+const UL = (elemOL = []) => {
   var response = "";
   console.log(typeof elemOL )
   if (typeof elemOL === "array" || typeof elemOL === "object") {
@@ -8,7 +8,7 @@ const UnorderedList = (elemOL = []) => {
       response += `- ${item}   `;
     })
   } else {
-    response = `WARNING :: 0 Items proveded for the ORDERED_LIST to print.`;
+    response = `WARNING :: 0 Items proveded for the UNORDERED_LIST to print.`;
   }
   
   } else {
@@ -17,4 +17,4 @@ const UnorderedList = (elemOL = []) => {
   return response;
 };
 
-module.exports = UnorderedList;
+module.exports = UL;

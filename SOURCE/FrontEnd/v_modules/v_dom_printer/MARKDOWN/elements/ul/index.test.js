@@ -1,8 +1,8 @@
-const UnorderedList = require("./index");
+const UL = require("./index");
 
 
-console.log(UnorderedList);
-console.log(UnorderedList());
-console.log(UnorderedList("Ye111111a some content for UnorderedList to fill!!!"));
-console.log(UnorderedList([]));
-console.log(UnorderedList(["yeaaa","more","info"]));
+console.log(UL);
+console.log(UL());
+console.log(UL("Ye111111a some content for UL to fill!!!"));
+console.log(UL([]));
+console.log(UL(["yeaaa","more","info"]));
