@@ -15,7 +15,7 @@
   \*****************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("\nconst pageData = __webpack_require__(/*! ./vadmin_config */ \"./SOURCE/FrontEnd/pages/vadmin_config.js\");\nconst V_DisplayDriver = __webpack_require__(/*! ../v_modules/v_display_driver/displayDriver */ \"./SOURCE/FrontEnd/v_modules/v_display_driver/displayDriver.js\");\n\nwindow.onload = () => {\n  V_DisplayDriver.page = pageData;\n  V_DisplayDriver.loadPage();\n}\n\n\n//# sourceURL=webpack://v_app_demo/./SOURCE/FrontEnd/pages/vadmin.js?");
+eval("\r\nconst pageData = __webpack_require__(/*! ./vadmin_config */ \"./SOURCE/FrontEnd/pages/vadmin_config.js\");\r\nconst V_DisplayDriver = __webpack_require__(/*! ../v_modules/v_display_driver/displayDriver */ \"./SOURCE/FrontEnd/v_modules/v_display_driver/displayDriver.js\");\r\n\r\nwindow.onload = () => {\r\n  V_DisplayDriver.page = pageData;\r\n  V_DisplayDriver.loadPage();\r\n}\r\n\n\n//# sourceURL=webpack://v_app_demo/./SOURCE/FrontEnd/pages/vadmin.js?");
 
 /***/ }),
 
