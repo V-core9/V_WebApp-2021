@@ -1,3 +1,3 @@
-const appConfig = require("./SOURCE/config/root_app");
+const appConfig = require("./SOURCE/Configurations/root_app");
 
 module.exports = appConfig;
