@@ -1,4 +1,8 @@
 
+const homePageData = require('../../pages/homepage_config');
+
+const vDomPrinter = require('../v_dom_printer/domPrinter');
+
 
 var wnd = window;
 var doc = document;
@@ -98,7 +102,7 @@ const V_DisplayDriver = {
               //console.log('Is ' + element.elemID + ' visible? YES')
               //element.call();
               if ((typeof element.render === 'undefined') || (element.lastUpdate > element.timeOfRender)) {
-                element.render = getTemplate(element);
+                element.render = vDomPrinter.getTemplate(element);
                 element.timeOfRender = Date.now();
                 helpElem.innerHTML = element.render;
                 helpElem.style.minHeight = helpElem.clientHeight + "px";
@@ -209,7 +213,7 @@ const V_DisplayDriver = {
 
       if (stopPrint === false) {
 
-        section.render = getTemplate(section);
+        section.render = vDomPrinter.getTemplate(section);
 
         this.maybeLoadStyle(section.type);
 
@@ -255,7 +259,7 @@ const V_DisplayDriver = {
     };
 
     if ((stylesNumber == 0) || (shouldLoadStyle)) {
-      this.styles = { name: type, style: getStyle(type) };
+      this.styles = { name: type, style: vDomPrinter.getStyle(type) };
       console.log("STYLE LOADED :=: " + type);
       return true;
     }
@@ -284,19 +288,6 @@ let vDisplay = V_DisplayDriver;
 vDisplay.init();
 
 
-const homePageData = require('../../pages/homepage_config');
-
-const vDomPrinter = require('../v_dom_printer/domPrinter');
-
-
-function getTemplate(section) {
-  return vDomPrinter.getTemplate(section);
-}
-
-
-function getStyle(templateName) {
-  return vDomPrinter.getStyle(templateName);
-}
 
 
 window.onload = () => {
