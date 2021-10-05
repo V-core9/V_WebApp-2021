@@ -13,7 +13,7 @@ var raf =
   window.requestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
   window.mozRequestAnimationFrame ||
-  function(callback) {
+  function (callback) {
     window.setTimeout(callback, 1000 / 60);
   };
 
@@ -24,19 +24,23 @@ const V_DisplayDriver = {
     mode: "hiding",
     debug: true
   },
+
   data: {
     page: {},
     styles: []
   },
+
   set page(page = null) {
     this.pageInputValidate(page);
     this.data.page = page;
     console.log(this);
     this.initPrint();
   },
+
   addSSOSLOBJ(newItems = null) {
     this.page = newItems;
   },
+
   pageInputValidate(page) {
     if (page === null) {
       console.warn("Error: Empty Input Value.");
@@ -45,9 +49,10 @@ const V_DisplayDriver = {
       return true;
     }
   },
+
   listenForEvents() {
     //Self addig on dom load
-    document.onreadystatechange = function() {
+    document.onreadystatechange = function () {
       switch (document.readyState) {
         case "loading":
           // The document is still loading.;
@@ -87,9 +92,9 @@ const V_DisplayDriver = {
       }
     });
   },
+
   looper() {
     //console.log('yea...scrolling')
-    //this.init();
     var notYetDone = 0;
     var testItems = vDisplay.data.page.sections;
     //console.log(testItems)
@@ -128,11 +133,12 @@ const V_DisplayDriver = {
       window.removeEventListener("scroll", this.handler);
     };
   },
-  // requestAnimationFrame
+
   handler() {
-    //console.log(this.raf);
+    // requestAnimationFrame
     raf(vDisplay.looper);
   },
+
   loadPage() {
     this.canPrintPage();
     var meta = this.data.page.meta;
@@ -149,9 +155,10 @@ const V_DisplayDriver = {
     keyW.setAttribute("name", "keywords");
     document.head.appendChild(keyW);
   },
+
   isInUserView(el) {
     //console.log('FunctionCall >> [ function isInUserView(el) ] || [ Elem: ' + el + ' ]');
-    const scroll =window.scrollY || window.pageYOffset;
+    const scroll = window.scrollY || window.pageYOffset;
     var elem = document.querySelector(el);
     if (typeof elem !== "undefined") {
       const boundsTop = (elem ? elem.getBoundingClientRect().top : 0) + scroll;
@@ -173,9 +180,11 @@ const V_DisplayDriver = {
       return false;
     }
   },
+
   preload() {
     console.log('FunctionCall >> [ function preload() ]');
   },
+
   canPrintPage() {
     if ((wnd) && (document)) {
       return true;
@@ -183,6 +192,7 @@ const V_DisplayDriver = {
       this.init();
     }
   },
+
   initPrint() {
     var stopPrint = false;
     this.data.page.sections.forEach(section => {
@@ -232,6 +242,7 @@ const V_DisplayDriver = {
       }
     })
   },
+
   set styles(style = null) {
     if (style !== null) {
       try {
@@ -240,13 +251,13 @@ const V_DisplayDriver = {
         console.log("ERROR:>> " + e.message);
         return false;
       }
-      console.log("ADDED STYLE TO ARRAY")
       document.body.innerHTML += style.style;
       return true;
     } else {
       console.warn("ERROR:>> style EMPTY");
     }
   },
+
   maybeLoadStyle(type) {
     var stylesNumber = this.data.styles.length;
     var shouldLoadStyle = true;
@@ -260,20 +271,21 @@ const V_DisplayDriver = {
 
     if ((stylesNumber == 0) || (shouldLoadStyle)) {
       this.styles = { name: type, style: vDomPrinter.getStyle(type) };
-      console.log("STYLE LOADED :=: " + type);
+      console.log("SUCCESS :: Style Loaded Into V_DisplayDriver \nTemplate Name  -[ " + type + " ] ");
       return true;
     }
 
-    console.log("NO STYLE LOADED");
+    if (shouldLoadStyle === false) {
+      console.log("SKIPPING Style Loading >> \nReason :[ shouldLoadStyle  == FALSE  ]  ");
+    } else {
+      console.log("NO STYLE LOADED");
+    };
     return false;
   },
+
   init(page = null) {
     console.log('FunctionCall >> [ function initSSOSL() ]');
     try {
-      // requestAnimationFrame
-      //this.raf = this.wnd.requestAnimationFrame || this.wnd.webkitRequestAnimationFrame || this.wnd.mozRequestAnimationFrame || function(callback) { this.wnd.setTimeout(callback, 1000 / 60); };
-
-      //this.handler();
       this.listenForEvents();
       wnd.addEventListener("load", vDisplay.handler);
       wnd.addEventListener("scroll", vDisplay.handler);
@@ -281,14 +293,12 @@ const V_DisplayDriver = {
       console.error(error);
     }
   }
-}
+
+};
 
 let vDisplay = V_DisplayDriver;
 
 vDisplay.init();
-
-
-
 
 window.onload = () => {
   vDisplay.page = homePageData;
