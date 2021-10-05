@@ -71,21 +71,21 @@ vDomPrinter.templates.forEach(item => {
   switch (item.name) {
     case "base_about_us_01":
       // << Returns HTML filled in with data....
-      console.log(item.html(BAU_01));
+      console.log(item.view(BAU_01));
       // << Returns CSS....
       console.log(item.css());
       break;
 
     case "base_hero_01":
       // << Returns HTML filled in with data....
-      console.log(item.html(BH_01));
+      console.log(item.view(BH_01));
       // << Returns CSS....
       console.log(item.css());
       break;
 
     case "base_newsletter_01":
       // << Returns HTML filled in with data....
-      console.log(item.html(BNL_01));
+      console.log(item.view(BNL_01));
       // << Returns CSS....
       console.log(item.css());
       break;

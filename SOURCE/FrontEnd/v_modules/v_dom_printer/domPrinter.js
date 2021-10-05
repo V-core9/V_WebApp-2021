@@ -18,7 +18,7 @@ const vDomPrinter = {
     var result = false;
     if (templateItem.type !== null) {
       result = this.findByName(templateItem.type);
-      result = result.html(templateItem.data);
+      result = result.view(templateItem.data);
     } else {
       console.warn("ERROR TYPE EMPTY");
       result = false;

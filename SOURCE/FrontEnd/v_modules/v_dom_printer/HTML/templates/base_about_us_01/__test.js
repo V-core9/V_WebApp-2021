@@ -4,7 +4,7 @@ console.log(base_about_us_01);
 console.log(base_about_us_01.name);
 console.log(base_about_us_01.disabled);
 console.log(base_about_us_01.author);
-console.log(base_about_us_01.html());
+console.log(base_about_us_01.view());
 console.log(base_about_us_01.css());
 
 
@@ -16,4 +16,4 @@ var BAU_01 = {
 }
 
 // << Returns HTML filled in with data....
-console.log(base_about_us_01.html(BAU_01));
+console.log(base_about_us_01.view(BAU_01));
