@@ -7,6 +7,4 @@ const vFileExplorer = {
 
 }
 
-console.log(vFileExplorer)
-console.log(vFileExplorer.listDir('./PUBLIC'));
-console.log(vFileExplorer.listDir('./SOURCE'));
+module.exports = vFileExplorer;

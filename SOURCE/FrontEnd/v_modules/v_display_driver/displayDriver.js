@@ -1,5 +1,5 @@
 
-const homePageData = require('../../pages/homepage_config');
+const pageData = require('../../pages/homepage_config');
 
 const vDomPrinter = require('../v_dom_printer/domPrinter');
 
@@ -301,12 +301,12 @@ let vDisplay = V_DisplayDriver;
 vDisplay.init();
 
 window.onload = () => {
-  vDisplay.page = homePageData;
+  vDisplay.page = pageData;
   vDisplay.loadPage();
 
   console.log(vDisplay);
   console.log(vDomPrinter)
-  console.log(homePageData)
+  console.log(pageData)
 }
 
 module.exports = V_DisplayDriver;

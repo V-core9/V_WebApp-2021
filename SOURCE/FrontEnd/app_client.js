@@ -15,3 +15,6 @@ const vApp = () => {
 };
 
 vApp();
+
+
+console.info(appConfigPageInfo);
