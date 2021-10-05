@@ -1,10 +1,15 @@
 const path = require("path");
 const appConfig = require("./__appConfig");
-const mode = appConfig.devMode ? "development" : "production";
-const cleanOutput = !appConfig.devMode;
+
+var cleanOutput = true;
+var appMode = "production";
+if (appConfig.name == "dev") {
+  appMode = "development";
+  cleanOutput = false;
+}
 
 module.exports = {
-  mode: mode,
+  mode: appMode,
   entry: {
     rootApplication: "./SOURCE/FrontEnd/app_client.js",
     V_DisplayDriver: "./SOURCE/FrontEnd/v_modules/v_display_driver/displayDriver.js",
