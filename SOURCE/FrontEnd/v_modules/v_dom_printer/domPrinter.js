@@ -14,7 +14,7 @@ const vDomPrinter = {
     return resp
   },
 
-  returnTemplate(templateItem = null) {
+  getTemplate(templateItem = null) {
     var result = false;
     if (templateItem.type !== null) {
       result = this.findByName(templateItem.type);
