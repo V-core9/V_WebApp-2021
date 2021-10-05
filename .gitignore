@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+
+
+
+
+system/ngrok.exe
+system/ngrok_live.txt

@@ -14,11 +14,13 @@
     "style-loader": "^3.3.0"
   },
   "scripts": {
+    "ngrok_start": " start bash -c \" bash system/ngrok_autorunner.sh \" ",
+    "ngrok_download": " start bash -c \" cd system ; curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip > ngrok_win.zip ; unzip ngrok_win.zip ; rm ngrok_win.zip \" && exit 1 ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start_server": " start bash -c \" node  SOURCE/BackEnd/app_server.js \"  ",
     "start_app": "  bash -c \" npm run build  \" &&  bash -c \" npm run start_server  \" ",
     "start_dev": "  start bash -c \" nodemon --exec npm run build  \" &&  bash -c \" npm run start_server  \"  ",
-    "build": " bash -c \" rm -r -f ./PUBLIC/* \" && bash -c \" npx webpack \" && bash -c \" node SOURCE/FrontEnd/v_modules/autorefresh_browser/json_updater.js; \"  && bash -c \" node-sass -r SOURCE/FrontEnd/scss -o PUBLIC/assets/style/css  \" && bash -c \" cp -r -f ./SOURCE/static/* ./PUBLIC/ \"   "
+    "build": " bash -c \" rm -r -f ./PUBLIC/* \" && bash -c \" npx webpack \" && bash -c \" node SOURCE/FrontEnd/v_modules/__autorefresh_browser/json_updater.js; \"  && bash -c \" node-sass -r SOURCE/FrontEnd/scss -o PUBLIC/assets/style/css  \" && bash -c \" cp -r -f ./SOURCE/static/* ./PUBLIC/ \"   "
   },
   "repository": {
     "type": "git",

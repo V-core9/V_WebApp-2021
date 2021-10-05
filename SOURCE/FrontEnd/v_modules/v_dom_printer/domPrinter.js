@@ -1,10 +1,10 @@
 const vDomPrinter = {
-  elements: require("./elements"),
-  templates: require("./templates/templates_ARRAY"),
+  HTML: require("./HTML"),
+  MD: require("./MARKDOWN"),
 
   findByName(objName = null) {
     var resp = false;
-    this.templates.forEach(item => {
+    this.HTML.templates.forEach(item => {
       console.log(item);
       if (objName == item.name) {
         console.log("FOUND SECTION TEMPLATE");

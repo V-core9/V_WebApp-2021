@@ -88,7 +88,7 @@ const V_DisplayDriver = {
     //this.init();
     var notYetDone = 0;
     var testItems = vDisplay.data.page.sections;
-    console.log(testItems)
+    //console.log(testItems)
     if (typeof testItems !== "undefined") {
       if (testItems.length > 0) {
         testItems.forEach((element) => {
@@ -285,7 +285,6 @@ vDisplay.init();
 
 const homePageData = require('../../pages/homepage_config');
 
-
 const vDomPrinter = require('../v_dom_printer/domPrinter');
 
 
@@ -306,6 +305,14 @@ let V_DomS = getStyle;
 window.onload = () => {
   vDisplay.page = homePageData;
   vDisplay.loadPage();
+
+
+  console.log(vDisplay);
+  console.log(vDomPrinter)
+  console.log(homePageData)
+  
 }
 
 module.exports = V_DisplayDriver;
+
+

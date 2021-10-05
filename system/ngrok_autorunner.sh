@@ -11,7 +11,7 @@
 #   NGROK  PATH   #
 #-----------------#
 ###################
-NG=Dev_Tools/ngrok
+NG=system/ngrok
 #-----------------#
 ###################
 
@@ -20,7 +20,7 @@ NG=Dev_Tools/ngrok
 #  PORT TO OPEN   #
 #-----------------#
 ###################
-PT=7744
+PT=420
 #-----------------#
 ###################
 #echo $PWD
@@ -87,8 +87,8 @@ printf " Link (HTTPS): ${LNK_HTTPS}\n"
 printf "\n Press [ENTER] to leave..."
 printf "\n\n\n"
 
-echo "${LNK_HTTP}" > ./Dev_Tools/ngrok_live.txt
-echo "${LNK_HTTPS}" >> ./Dev_Tools/ngrok_live.txt
+echo "${LNK_HTTP}" > ./system/ngrok_live.txt
+echo "${LNK_HTTPS}" >> ./system/ngrok_live.txt
 
 read -p " "
 exit 0

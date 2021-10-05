@@ -3,6 +3,7 @@ const appMode = "dev";
 switch (appMode) {
   case "dev":
     module.exports = {
+      name: "dev",
       language: "EN",
       onlySecure: false,
       origin: "localhost",
@@ -15,6 +16,7 @@ switch (appMode) {
 
   case "test":
     module.exports = {
+      name: "test",
       language: "EN",
       onlySecure: true,
       origin: "localhost",
@@ -26,6 +28,7 @@ switch (appMode) {
 
   default:
     module.exports = {
+      name: "LIVE",
       language: "EN",
       onlySecure: true,
       origin: "*",
