@@ -14,6 +14,8 @@ module.exports = {
     rootApplication: "./SOURCE/FrontEnd/app_client.js",
     V_DisplayDriver: "./SOURCE/FrontEnd/v_modules/v_display_driver/displayDriver.js",
     V_DomPrinter: "./SOURCE/FrontEnd/v_modules/v_dom_printer/domPrinter.js",
+    homepage: "./SOURCE/FrontEnd/pages/homepage.js",
+    vadmin: "./SOURCE/FrontEnd/pages/vadmin.js",
   },
   target: appConfig.target,
   output: {

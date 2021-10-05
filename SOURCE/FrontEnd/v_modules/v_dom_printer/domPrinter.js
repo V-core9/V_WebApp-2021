@@ -5,7 +5,7 @@ const vDomPrinter = {
   findByName(objName = null) {
     var resp = false;
     this.HTML.templates.forEach(item => {
-      console.log(item);
+      //console.log(item);
       if (objName == item.name) {
         console.log("FOUND SECTION TEMPLATE");
         resp = item;
@@ -35,7 +35,17 @@ const vDomPrinter = {
       result = false;
     }
     return result;
-  }
+  },
+  getOnLoad(templateItem = null) {
+    var result = false;
+    if (templateItem.type !== null) {
+      result = this.findByName(templateItem.type);
+      return result.onload;
+    } else {
+      console.warn("ERROR TYPE EMPTY");
+      return false;
+    }
+  },
 }
 
 module.exports = vDomPrinter;

@@ -1,9 +1,8 @@
-* {
-  border: 1px solid #1f0303;
-  padding: 1em; }
-  *:hover {
-    border: 1px solid red;
-    background: rgba(0, 0, 0, 0.35); }
+body * {
+  outline: none;
+  border: none;
+  padding: .25em .5em;
+  margin: 0em; }
 
 html {
   background: #101525;
@@ -12,15 +11,21 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-size: 20px;
-  font-family: monospace; }
+  font-size: 16px;
+  font-family: monospace;
+  background: #ffffff0a;
+  gap: 1em; }
 
 .page_section {
   display: flex;
   flex-direction: column;
   flex: 1;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  background: #ffffff0d; }
+
+.section_side {
+  max-width: 50%; }
 
 @media screen and (min-width: 768px) {
   .page_section {

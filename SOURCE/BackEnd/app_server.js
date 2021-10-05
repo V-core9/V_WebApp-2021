@@ -1,6 +1,11 @@
 
 const path = require("path");
 let fs = require("fs")
+const vFileExplorer = require(path.join(__dirname, "./v_modules/fileExplorer/fs_explorer"))
+
+var homePage = fs.readFileSync(path.join(__dirname, "../../PUBLIC/index.html"));
+var adminPage = fs.readFileSync(path.join(__dirname, "../../PUBLIC/admin.html"));
+var listOfFiles = vFileExplorer.listDir(path.join(__dirname, "../../"));
 
 // Setup basic express server
 var compression = require('compression')
@@ -25,18 +30,13 @@ app.use(express.static(path.join(__dirname, "../../PUBLIC")));
 
 // Get page by slug
 app.get('/Vadmin', function (req, res) {
-  var page = fs.readFileSync(path.join(__dirname, "../../PUBLIC/index.html"));
-  var pageInfo = '<script>' + JSON.stringify({ appConfig: appConfig, page_slug: req.params.page_slug, response_timestamp: Date.now() }, true, 2) + '</script>';
-  res.send(pageInfo + "ADMIN PAGE" + page);
+  res.send( '<script>const  appConfigPageInfo = ' + JSON.stringify({ appConfig: appConfig, page_slug: req.params.page_slug, response_timestamp: Date.now() , files: listOfFiles }, true, 2) + ' ;</script>' + adminPage );
 });
-
 
 //-> PUBLIC 
 
 // Get page by slug
 app.get('/:page_slug', function (req, res) {
-  var page = fs.readFileSync(path.join(__dirname, "../../PUBLIC/index.html"));
-  var pageInfo = '<script>' + JSON.stringify({ appConfig: appConfig, page_slug: req.params.page_slug, response_timestamp: Date.now() }, true, 2) + '</script>';
-  res.send(pageInfo + page);
+  res.send( '<script>const  appConfigPageInfo = ' + JSON.stringify({ appConfig: appConfig, page_slug: req.params.page_slug, response_timestamp: Date.now() }, true, 2) + ' ;</script>' + homePage );
 });
 

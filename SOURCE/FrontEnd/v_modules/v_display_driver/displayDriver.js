@@ -1,5 +1,4 @@
 
-const homePageData = require('../../pages/homepage_config');
 
 const vDomPrinter = require('../v_dom_printer/domPrinter');
 
@@ -118,7 +117,19 @@ const V_DisplayDriver = {
                 element.done = true;
               }
             }
+
+            
+            if (!element.onloadDone) {
+                element.onload = vDomPrinter.getOnLoad(element.type);
+                if (typeof element.onload === "function") {
+                  console.log(element.onload);
+                  element.onload();
+                };
+                element.onLoadDone = true;
+            };
+
           } else {
+            element.onLoadDone = false;
             element.done = false;
             helpElem.innerHTML = "";
             //console.log('Is ' + element.elemID + ' visible? NO')
@@ -196,7 +207,6 @@ const V_DisplayDriver = {
   initPrint() {
     var stopPrint = false;
     this.data.page.sections.forEach(section => {
-      console.log(performance.now());
 
       var helpVal = (performance.now() * (1000000000));
       var helpVal2 = helpVal - Math.trunc(helpVal);
@@ -225,15 +235,25 @@ const V_DisplayDriver = {
 
         section.render = vDomPrinter.getTemplate(section);
 
+            
+          if (!section.onloadDone) {
+            section.onload = vDomPrinter.getOnLoad(section);
+            if  (typeof section.onload === "function")  {
+              console.log(section.onload);
+              section.onload();
+            };
+          section.onLoadDone = true;
+        };
+
         this.maybeLoadStyle(section.type);
 
         document.getElementById(uid).innerHTML = section.render;
 
-        console.log(document.getElementById(uid).clientHeight);
+        //console.log(document.getElementById(uid).clientHeight);
 
         document.getElementById(uid).style.minHeight = document.getElementById(uid).clientHeight + "px";
         section.timeOfRender = Date.now();
-        console.log(section.render);
+        //console.log(section.render);
         console.log("EEEE #" + uid)
         if (!vDisplay.isInUserView("#" + uid)) {
           stopPrint = true;
@@ -276,9 +296,9 @@ const V_DisplayDriver = {
     }
 
     if (shouldLoadStyle === false) {
-      console.log("SKIPPING Style Loading >> \nReason :[ shouldLoadStyle  == FALSE  ]  ");
+      //console.log("SKIPPING Style Loading >> \nReason :[ shouldLoadStyle  == FALSE  ]  ");
     } else {
-      console.log("NO STYLE LOADED");
+      //console.log("NO STYLE LOADED");
     };
     return false;
   },
@@ -299,15 +319,6 @@ const V_DisplayDriver = {
 let vDisplay = V_DisplayDriver;
 
 vDisplay.init();
-
-window.onload = () => {
-  vDisplay.page = homePageData;
-  vDisplay.loadPage();
-
-  console.log(vDisplay);
-  console.log(vDomPrinter)
-  console.log(homePageData)
-}
 
 module.exports = V_DisplayDriver;
 
