@@ -1,6 +1,6 @@
 const base_newsletter_01 = {
   name: "base_newsletter_01",
-  html(section = { title : null, text: null }) {
+  view(section = { title : null, text: null }) {
     return `<div class="section_side">
               <h3>${section.title}</h3>
               <p>${section.text}</p>

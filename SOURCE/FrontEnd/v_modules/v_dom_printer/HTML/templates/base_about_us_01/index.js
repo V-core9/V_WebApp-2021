@@ -1,6 +1,6 @@
 const base_about_us_01 = {
   name: "base_about_us_01",
-  html(section = { title : null, subtitle: null, text: null }) {
+  view(section = { title : null, subtitle: null, text: null }) {
     return `<div class="section_full">
                   <h3>${section.title}</h3>
                   <h5>${section.subtitle}</h5>

@@ -1,6 +1,6 @@
 const base_hero_01 = {
   name: "base_hero_01",
-  html: (section = { title: null, subtitle: null, button: { do: null, text: null }, image:{url: "#",width:"auto",height:"auto",alt: null} }) => {
+  view: (section = { title: null, subtitle: null, button: { do: null, text: null }, image:{url: "#",width:"auto",height:"auto",alt: null} }) => {
     return `<div class="section_side">
                 <h1>${section.title}</h1>
                 <h2>${section.subtitle}</h2>
