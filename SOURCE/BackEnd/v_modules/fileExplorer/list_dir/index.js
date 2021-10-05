@@ -1,13 +1,14 @@
-
+let path = require('path');
 const fs = require('fs');
 
-const listDir = (dirName = null) => {
-  if (dirName !== null) {
+const listDir = (dirPath = null) => {
+  if (dirPath !== null) {
     try {
       var files = [];
-      fs.readdirSync(dirName).forEach(file => {
-        console.log(file);
-        files.push(file);
+      fs.readdirSync(dirPath).forEach(file => {
+        var currentFile = { name: file, stats: JSON.parse(JSON.stringify( fs.statSync(path.join(dirPath, file))))}
+        console.log(currentFile);
+        files.push(currentFile);
       });
       return files;
     } catch (err) {
