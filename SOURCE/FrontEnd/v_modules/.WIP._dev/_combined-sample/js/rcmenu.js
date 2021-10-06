@@ -136,7 +136,7 @@ function showContextMenu(e) {
         addMenuHoverAnimation();
       }
     }
-    
+
     selectingItem(e);
 
   }
@@ -396,7 +396,7 @@ if (!(typeof debugRCmenu === "undefined")) {
     var debugSide = document.createElement("DIV");   // Create a <button> element
     debugSide.innerHTML = "<a class='debug_toggler' onclick='toggleDebugSide()' title='Toggle Debug'>>></a><div class='debug_inner'><h2>Debug Info </h2><div class='optionsDebugLog'><button onclick='clearEventLog()'>Clear Event Log</button><button onclick='consoleLogObject()'>Console.log( logObj )</button><button onclick=\"downloadLog( logObj, 'rcmenu-log', 'text/plain')\">Download Log</button></div><div id='events_log' ></div><div class='menusObjectPrint'></div></div>";
     debugSide.setAttribute("id", "debug_side");
-    document.body.appendChild(debugSide);
+    document.querySelector("#demo4 .con-body").appendChild(debugSide);
     test_add();
   };
 };
@@ -435,7 +435,7 @@ function test_add() {
   };
   addNewMenu(customMenu);
 };
-;
+
 
 function deleteEventLogItem() {
   var helperElem = document.querySelector('.selected').dataset.eventId;
@@ -453,6 +453,7 @@ function toggleDebugSide() {
     document.querySelector('.debug_toggler').innerHTML = "<<";
   };
 };
+
 
 function addMenuHoverAnimation() {
   var helperNode = document.querySelector('.customMenu');

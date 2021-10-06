@@ -4,6 +4,10 @@ html, body {
   font-family: monospace;
   color: #039BE5;
   cursor: none;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+  width: 100%;
 }
 
 p {
@@ -158,7 +162,7 @@ button, a {
 }
 
 svg polyline, svg line, svg path {
-  fill: none;
+  fill: white;
   stroke: #000;
   stroke-linecap: round;
   stroke-linejoin: round;

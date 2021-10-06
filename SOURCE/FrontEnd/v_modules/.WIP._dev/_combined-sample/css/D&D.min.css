@@ -3,12 +3,7 @@
   display: -ms-flexbox;
   display: flex;
   height: 2em;
-  background: rgba(0, 0, 0, .5)
-}
-
-#demo1, #demo2, #demo3 {
-  color: #fff;
-  position: absolute
+  background: rgba(255, 255, 255, 0.125)
 }
 
 .v_box {
@@ -22,7 +17,10 @@
   min-width: 200px;
   min-height: 200px;
   box-shadow: 0 5px 10px black;
-  background: rgba(0, 0, 0, .5)
+  background: rgba(0, 0, 0, .95);
+  border: 1px solid #03a9f480;
+  color: #fff;
+  position: absolute
 }
 
 .v_box .con-header {
@@ -43,6 +41,8 @@
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  overflow: auto;
+  position: relative;
 }
 
 #demo1  {
@@ -62,13 +62,13 @@
 
 
 #demo1 .con-header {
-  background: green;
+  background: #00ff0024;
 }
 
 #demo2 .con-header{
-  background: red;
+  background: #0000ff24;
 }
 
 #demo3 .con-header{
-  background: #00f;
+  background: #ff000024;
 }
