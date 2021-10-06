@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  min-height: 200px; }
+  .container .con-header {
+    display: flex;
+    height: 2em;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25em 1em; }
+  .container .con-body {
+    display: flex;
+    height: 2em;
+    flex: 1; }
+  .container .con-footer {
+    display: flex;
+    height: 2em;
+    background: rgba(0, 0, 0, 0.5); }
+
+#demo1 {
+  background: green;
+  color: white;
+  top: 10px;
+  left: 10px;
+  position: absolute; }
+
+#demo2 {
+  background: red;
+  color: white;
+  top: 410px;
+  left: 410px;
+  position: absolute; }
+
+#demo3 {
+  background: blue;
+  color: white;
+  top: 410px;
+  left: 10px;
+  position: absolute; }
+
+.draggableJS .dragHandleJS {
+  cursor: grab; }

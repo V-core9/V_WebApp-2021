@@ -3,10 +3,6 @@
 const vDomPrinter = require('../v_dom_printer/domPrinter');
 
 
-var wnd = window;
-var doc = document;
-
-
 // requestAnimationFrame
 var raf =
   window.requestAnimationFrame ||
@@ -197,7 +193,7 @@ const V_DisplayDriver = {
   },
 
   canPrintPage() {
-    if ((wnd) && (document)) {
+    if ((window) && (document)) {
       return true;
     } else {
       this.init();
@@ -307,8 +303,8 @@ const V_DisplayDriver = {
     console.log('FunctionCall >> [ function initSSOSL() ]');
     try {
       this.listenForEvents();
-      wnd.addEventListener("load", vDisplay.handler);
-      wnd.addEventListener("scroll", vDisplay.handler);
+      window.addEventListener("load", vDisplay.handler);
+      window.addEventListener("scroll", vDisplay.handler);
     } catch (error) {
       console.error(error);
     }
