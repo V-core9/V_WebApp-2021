@@ -190,14 +190,18 @@ function shortCutFunction() {
 // ! ------------------------------------------------------------------------------
 
 function showRootModal() {
-  document.body.innerHTML += `<div class="rootModal">`
-    + `<div class="inner">`
-    + `<p class="title">Something Happened</p>`
-    + `<p class="description">Yea you can say so something just showed up...sooo</p>`
-    + `<button>Yea</button>`
-    + `<button>No</button>`
-    + `</div>`
-    + `</div>`
+  document.body.insertAdjacentHTML('beforeend', `<div class="rootModal">
+                                                                                  <div class="inner">
+                                                                                    <p class="title">Something Happened</p>
+                                                                                    <p class="description">Yea you can say so something just showed up...sooo</p>
+                                                                                    <button onclick='alert("yea confirm")'>Yea</button>
+                                                                                    <button onclick='removeRootModal()'>No</button>
+                                                                                  </div>
+                                                                                </div>`);
+};
+
+function removeRootModal() {
+  document.querySelector(".rootModal").remove()
 }
 
 // ! ------------------------------------------------------------------------------
