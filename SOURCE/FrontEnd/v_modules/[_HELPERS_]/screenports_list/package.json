@@ -1,0 +1,24 @@
+{
+	"name": "v_screenports",
+	"version": "1.0.0",
+	"description": "Simple way for using these without need to remember. just put in some defaults for success, error,warning, etc...easy to remember.",
+	"main": "v_screenports.list.js",
+	"scripts": {
+		"test": "test"
+	},
+	"keywords": [
+		"screen",
+		"resolution",
+		"viewport",
+		"size",
+		"display",
+		"monitor",
+		"screen size",
+		"display px size",
+		"monitor width",
+		"screen width",
+		"screen height"
+	],
+	"author": "⩤⮓᚜⩔≜⧌᚛⮒⩥",
+	"license": "MIT"
+}
