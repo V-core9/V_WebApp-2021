@@ -1,19 +1,10 @@
-
-
 const vDomPrinter = require('../v_dom_printer/domPrinter');
 
 
 // requestAnimationFrame
-var raf =
-  window.requestAnimationFrame ||
-  window.webkitRequestAnimationFrame ||
-  window.mozRequestAnimationFrame ||
-  function (callback) {
-    window.setTimeout(callback, 1000 / 60);
-  };
+raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) { window.setTimeout(callback, 1000 / 60); };
 
-
-// vDisplayDriver <=> AO_DisplayDriver => vDisplay |:|
+// vDisplayDriver 
 const vDisplayDriver = {
   config: {
     mode: "hiding",
@@ -68,14 +59,14 @@ const vDisplayDriver = {
 
       if (typeof current_page_vdd !== "undefined") {
         try {
-          vDisplay.addSSOSLOBJ(current_page_vdd);
+          vDisplayDriver.addSSOSLOBJ(current_page_vdd);
         } catch (error) {
           console.error(error);
         }
       }
 
       try {
-        vDisplay.init();
+        vDisplayDriver.init();
       } catch (error) {
         console.error(error);
       }
@@ -91,22 +82,20 @@ const vDisplayDriver = {
   looper() {
     //console.log('yea...scrolling')
     var notYetDone = 0;
-    var testItems = vDisplay.data.page.sections;
+    var testItems = vDisplayDriver.data.page.sections;
     //console.log(testItems)
     if (typeof testItems !== "undefined") {
       if (testItems.length > 0) {
         testItems.forEach((element) => {
           var helpElem = document.getElementById(element.elemID);
-          if (vDisplay.isInUserView('#' + element.elemID)) {
+          if (vDisplayDriver.isInUserView('#' + element.elemID)) {
             if (!element.done) {
-              //console.log('Is ' + element.elemID + ' visible? YES')
-              //element.call();
               if ((typeof element.render === 'undefined') || (element.lastUpdate > element.timeOfRender)) {
                 element.render = vDomPrinter.getTemplate(element);
                 element.timeOfRender = Date.now();
                 helpElem.innerHTML = element.render;
                 helpElem.style.minHeight = helpElem.clientHeight + "px";
-                vDisplay.maybeLoadStyle(element.type);
+                vDisplayDriver.maybeLoadStyle(element.type);
                 element.done = true;
               } else {
                 helpElem.innerHTML = element.render;
@@ -114,14 +103,13 @@ const vDisplayDriver = {
               }
             }
 
-            
             if (!element.onloadDone) {
-                element.onload = vDomPrinter.getOnLoad(element.type);
-                if (typeof element.onload === "function") {
-                  console.log(element.onload);
-                  element.onload();
-                };
-                element.onLoadDone = true;
+              element.onload = vDomPrinter.getOnLoad(element.type);
+              if (typeof element.onload === "function") {
+                console.log(element.onload);
+                element.onload();
+              };
+              element.onLoadDone = true;
             };
 
           } else {
@@ -143,7 +131,7 @@ const vDisplayDriver = {
 
   handler() {
     // requestAnimationFrame
-    raf(vDisplay.looper);
+    raf(vDisplayDriver.looper);
   },
 
   loadPage() {
@@ -231,13 +219,13 @@ const vDisplayDriver = {
 
         section.render = vDomPrinter.getTemplate(section);
 
-            
-          if (!section.onloadDone) {
-            section.onload = vDomPrinter.getOnLoad(section);
-            if  (typeof section.onload === "function")  {
-              console.log(section.onload);
-              section.onload();
-            };
+
+        if (!section.onloadDone) {
+          section.onload = vDomPrinter.getOnLoad(section);
+          if (typeof section.onload === "function") {
+            console.log(section.onload);
+            section.onload();
+          };
           section.onLoadDone = true;
         };
 
@@ -251,7 +239,7 @@ const vDisplayDriver = {
         section.timeOfRender = Date.now();
         //console.log(section.render);
         console.log("EEEE #" + uid)
-        if (!vDisplay.isInUserView("#" + uid)) {
+        if (!vDisplayDriver.isInUserView("#" + uid)) {
           stopPrint = true;
           console.log("stopPrint = TRUE")
         }
@@ -303,8 +291,8 @@ const vDisplayDriver = {
     console.log('FunctionCall >> [ function initSSOSL() ]');
     try {
       this.listenForEvents();
-      window.addEventListener("load", vDisplay.handler);
-      window.addEventListener("scroll", vDisplay.handler);
+      window.addEventListener("load", vDisplayDriver.handler);
+      window.addEventListener("scroll", vDisplayDriver.handler);
     } catch (error) {
       console.error(error);
     }
@@ -312,9 +300,9 @@ const vDisplayDriver = {
 
 };
 
-let vDisplay = vDisplayDriver;
 
-vDisplay.init();
+
+vDisplayDriver.init();
 
 module.exports = vDisplayDriver;
 
