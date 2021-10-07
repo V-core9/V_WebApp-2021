@@ -25,7 +25,6 @@ const V_ScreenPortsList = [
 	},
 	{
 		"title": "AppleIPhoneXR",
-		"title": "DellXPS",
 		"device": "Apple IPhone XR",
 		"width": 414,
 		"height": 896

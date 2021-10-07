@@ -1,8 +1,9 @@
-const V_DisplayDriver = require("./v_modules/v_display_driver/displayDriver");
+const [ vSvgPointer, V_DisplayDriver ] = require("./v_modules");
 
 const vApp = () => {
   if (typeof this.bootStatus === "undefined") this.bootStatus = null;
   this.vDisplay = V_DisplayDriver;
+  this.vSvgPointer = vSvgPointer;
 
   this.boot = () => {
     console.log("[-IN_PROGRESS-] :: V_Application Boot Starting >->-> ");

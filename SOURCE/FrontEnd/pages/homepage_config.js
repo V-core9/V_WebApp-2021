@@ -97,17 +97,17 @@ module.exports = {
   {
     type: "base_hero_01",
     data: {
-      title: "SECOND SECTION TITLE",
-      subtitle: "22222222Space holder for subtitle....",
+      title: "Checkout the Web_DEMO App",
+      subtitle: "Running using Vanilla JS exported through WebPack...",
       button: {
-        text: "Join Today!",
+        text: "Open Demo",
         do: "testCallbackFunction('Join today button alerting!')"
       },
       image: {
-        width: 180,
-        height: 180,
-        url: "/assets/logo.png",
-        alt: "MIKI222222"
+        width: 800,
+        height: 450,
+        url: "/assets/images/vWebDemo2021.png",
+        alt: "vWebDemo App 2021"
       },
       background: {
         type: "color",
