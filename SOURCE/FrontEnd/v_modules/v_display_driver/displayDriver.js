@@ -6,6 +6,7 @@ raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame || wind
 
 // vDisplayDriver 
 const vDisplayDriver = {
+  
   config: {
     mode: "hiding",
     debug: true
@@ -17,24 +18,17 @@ const vDisplayDriver = {
   },
 
   set page(page = null) {
-    this.pageInputValidate(page);
-    this.data.page = page;
-    console.log(this);
-    this.initPrint();
-  },
-
-  addSSOSLOBJ(newItems = null) {
-    this.page = newItems;
-  },
-
-  pageInputValidate(page) {
-    if (page === null) {
-      console.warn("Error: Empty Input Value.");
-    } else {
-      console.warn("Success: New Page Valid.");
+    if (page === null) return false;
+    try {
+      this.data.page = page;
+      //console.log(this);
+      this.initPrint();
       return true;
+    } catch (error) {
+      return error;
     }
   },
+
 
   listenForEvents() {
     //Self addig on dom load
@@ -45,7 +39,7 @@ const vDisplayDriver = {
           break;
         case "interactive":
           // DOMContentLoaded event.
-          window.dispatchEvent(new Event('ssosl_ready'))
+          window.dispatchEvent(new Event('vDisplayDriver_Ready'))
           break;
         case "complete":
           // The document is finished loading.
@@ -54,16 +48,9 @@ const vDisplayDriver = {
       //console.log(document.readyState)
     };
 
-    window.addEventListener('ssosl_ready', (e) => {
-      console.log('EventListener got:[> ssosl_ready <]');
+    window.addEventListener('vDisplayDriver_Ready', (e) => {
 
-      if (typeof current_page_vdd !== "undefined") {
-        try {
-          vDisplayDriver.addSSOSLOBJ(current_page_vdd);
-        } catch (error) {
-          console.error(error);
-        }
-      }
+      console.log('EventListener got:[> vDisplayDriver_Ready <]');
 
       try {
         vDisplayDriver.init();
@@ -72,10 +59,11 @@ const vDisplayDriver = {
       }
 
       try {
-        window.removeEventListener('ssosl_ready', this);
+        window.removeEventListener('vDisplayDriver_Ready', this);
       } catch (error) {
         console.error(error);
       }
+
     });
   },
 
@@ -107,7 +95,10 @@ const vDisplayDriver = {
               element.onload = vDomPrinter.getOnLoad(element.type);
               if (typeof element.onload === "function") {
                 console.log(element.onload);
-                element.onload();
+                console.log(element);
+                element.render = element.onload();
+                console.log(element);
+                element.timeOfRender = Date.now();
               };
               element.onLoadDone = true;
             };
@@ -123,7 +114,7 @@ const vDisplayDriver = {
       }
     }
 
-    if (notYetDone === 0) {
+    if (notYetDone === -1) {
       console.log('Done! Detaching scroll event listener...')
       window.removeEventListener("scroll", this.handler);
     };
@@ -176,10 +167,6 @@ const vDisplayDriver = {
     }
   },
 
-  preload() {
-    console.log('FunctionCall >> [ function preload() ]');
-  },
-
   canPrintPage() {
     if ((window) && (document)) {
       return true;
@@ -224,7 +211,7 @@ const vDisplayDriver = {
           section.onload = vDomPrinter.getOnLoad(section);
           if (typeof section.onload === "function") {
             console.log(section.onload);
-            section.onload();
+            section.onload(uid);
           };
           section.onLoadDone = true;
         };
@@ -233,12 +220,10 @@ const vDisplayDriver = {
 
         document.getElementById(uid).innerHTML = section.render;
 
-        //console.log(document.getElementById(uid).clientHeight);
-
         document.getElementById(uid).style.minHeight = document.getElementById(uid).clientHeight + "px";
         section.timeOfRender = Date.now();
         //console.log(section.render);
-        console.log("EEEE #" + uid)
+        //console.log("EEEE #" + uid)
         if (!vDisplayDriver.isInUserView("#" + uid)) {
           stopPrint = true;
           console.log("stopPrint = TRUE")
@@ -248,18 +233,17 @@ const vDisplayDriver = {
   },
 
   set styles(style = null) {
-    if (style !== null) {
-      try {
-        this.data.styles.push(style);
-      } catch (e) {
-        console.log("ERROR:>> " + e.message);
-        return false;
-      }
-      document.body.innerHTML += style.style;
-      return true;
-    } else {
-      console.warn("ERROR:>> style EMPTY");
-    }
+      if (style !== null) {
+        try {
+          this.data.styles.push(style);
+        } catch (e) {
+          console.log("ERROR:>> " + e.message);
+          return false;
+        }
+        document.body.innerHTML += style.style;
+        return true;
+      } 
+      return false;
   },
 
   maybeLoadStyle(type) {
@@ -275,7 +259,7 @@ const vDisplayDriver = {
 
     if ((stylesNumber == 0) || (shouldLoadStyle)) {
       this.styles = { name: type, style: vDomPrinter.getStyle(type) };
-      console.log("SUCCESS :: Style Loaded Into vDisplayDriver \nTemplate Name  -[ " + type + " ] ");
+      //console.log("SUCCESS :: Style Loaded Into vDisplayDriver \nTemplate Name  -[ " + type + " ] ");
       return true;
     }
 
@@ -287,8 +271,11 @@ const vDisplayDriver = {
     return false;
   },
 
+  renderUpdated(event) {
+    console.warn(event);
+  },
+
   init(page = null) {
-    console.log('FunctionCall >> [ function initSSOSL() ]');
     try {
       this.listenForEvents();
       window.addEventListener("load", vDisplayDriver.handler);
@@ -300,10 +287,6 @@ const vDisplayDriver = {
 
 };
 
-
-
 vDisplayDriver.init();
 
 module.exports = vDisplayDriver;
-
-

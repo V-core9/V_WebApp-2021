@@ -33,21 +33,36 @@ module.exports = {
     color: "#d0d0d0"
   },
   sections: [
-  {
-    type: "admin_base_list_01",
-    data: {
-      title: "V_ADMIN PAGE : _ _ _",
-      subtitle: "Admin subtitle just to fill in space.",
-      button: {
-        text: "Refresh",
-        do: "refreshStats()"
-      },
-      background: {
-        type: "color",
-        url: "#152030"
+    {
+      type: "admin_base_list_files_01",
+      data: {
+        title: "V_ADMIN PAGE : _ _ _",
+        subtitle: "Admin subtitle just to fill in space.",
+        button: {
+          text: "Refresh",
+          do: "refreshStats()"
+        },
+        background: {
+          type: "color",
+          url: "#152030"
+        }
       }
-    }
-  },
+    },
+    {
+      type: "admin_base_list_01",
+      data: {
+        title: "onLoad [rendered first time] event: _ _ _",
+        subtitle: "Got a little delay to be in a free fly mode.",
+        button: {
+          text: "Refresh",
+          do: "refreshStats()"
+        },
+        background: {
+          type: "color",
+          url: "#152030"
+        }
+      }
+    },
   {
     type: "base_hero_01",
     data: {
