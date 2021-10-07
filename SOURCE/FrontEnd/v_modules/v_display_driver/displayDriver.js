@@ -13,8 +13,8 @@ var raf =
   };
 
 
-// V_DisplayDriver <=> AO_DisplayDriver => vDisplay |:|
-const V_DisplayDriver = {
+// vDisplayDriver <=> AO_DisplayDriver => vDisplay |:|
+const vDisplayDriver = {
   config: {
     mode: "hiding",
     debug: true
@@ -287,7 +287,7 @@ const V_DisplayDriver = {
 
     if ((stylesNumber == 0) || (shouldLoadStyle)) {
       this.styles = { name: type, style: vDomPrinter.getStyle(type) };
-      console.log("SUCCESS :: Style Loaded Into V_DisplayDriver \nTemplate Name  -[ " + type + " ] ");
+      console.log("SUCCESS :: Style Loaded Into vDisplayDriver \nTemplate Name  -[ " + type + " ] ");
       return true;
     }
 
@@ -312,10 +312,10 @@ const V_DisplayDriver = {
 
 };
 
-let vDisplay = V_DisplayDriver;
+let vDisplay = vDisplayDriver;
 
 vDisplay.init();
 
-module.exports = V_DisplayDriver;
+module.exports = vDisplayDriver;
 
 

@@ -1,4 +1,6 @@
-var debugCustomCursor = true;
+
+
+const debugCustomCursor = true;
 document.documentElement.style.cursor = 'none';
 var customCursorString = `<svg id="customCursor" width="30px" height="30px" viewBox="0 0 20 20" class="svg-2 selected">
                         <defs>
@@ -17,24 +19,25 @@ var customCursorString = `<svg id="customCursor" width="30px" height="30px" view
                         <ellipse stroke-width="0" ry="3" rx="3" id="svg_14" cy="12" cx="12" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="url(#grad1)"></ellipse>
                         <ellipse stroke-width="0.5" ry="3" rx="3" id="svg_13" cy="12" cx="12" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none" stroke-dasharray="8,1,2,1,2,1"></ellipse>
                         </svg>`;
-document.querySelector('body').innerHTML += customCursorString;
+document.querySelector('body').insertAdjacentHTML("afterEnd", customCursorString);
 var customCursor = document.querySelector('#customCursor');
 
-function mouseMove(e){
-    //alert(e.clientX + " " + e.clientY);
-    customCursor.style.top = e.clientY+'px';
-    customCursor.style.left = e.clientX+'px';
+function mouseMove(e) {
+  console.log(e.clientX + " " + e.clientY);
+  customCursor.style.top = e.clientY + 'px';
+  customCursor.style.left = e.clientX + 'px';
 }
 
-function mouseClickStart(){
-    customCursor.classList.add('clicking');
+function mouseClickStart() {
+  customCursor.classList.add('clicking');
 }
 
-function mouseClickStop(){
-    customCursor.classList.remove('clicking');
+function mouseClickStop() {
+  customCursor.classList.remove('clicking');
 }
 
-window.addEventListener("mousemove",mouseMove);
 
-window.addEventListener("mousedown",mouseClickStart);
-window.addEventListener("mouseup",mouseClickStop);
+
+window.addEventListener("mousemove", mouseMove);
+window.addEventListener("mousedown", mouseClickStart);
+window.addEventListener("mouseup", mouseClickStop);

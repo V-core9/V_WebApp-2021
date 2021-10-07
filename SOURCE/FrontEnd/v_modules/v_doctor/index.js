@@ -1,18 +1,21 @@
 let PerformanceMark = require('./performance_mark');
 let FunctionMark = require('./function_mark');
 
-const V_WebDoctor = {
+const vDoctor = {
+
   _this: {},
   config: {
     _this: {},
     devMode: true,
   },
+
   data: {
     _this: {},
     functionsList: [],
     performanceMarks: [],
     registeredFunctions: [],
   },
+
   do: {
     _this: {},
 
@@ -33,25 +36,25 @@ const V_WebDoctor = {
       }
     },
     logFunctionsList: function () {
-      console.log("[ SO_Method call =>  V_WebDoctor.do.logFunctionsList() ]");
+      console.log("[ SO_Method call =>  vDoctor.do.logFunctionsList() ]");
       if (this._this.data.functionsList.length > 0) {
         console.log(JSON.stringify(this._this.data.functionsList));
         console.log(
-          "[ EO_Method call =>  V_WebDoctor.do.logFunctionsList() | Msg => OK : Data was already available. ] ]"
+          "[ EO_Method call =>  vDoctor.do.logFunctionsList() | Msg => OK : Data was already available. ] ]"
         );
         return true;
       } else {
         if (this.getFunctionsList() != false) {
           console.log(this._this.data.functionsList.length);
           console.log(
-            "[ EO_Method call =>  V_WebDoctor.do.logFunctionsList() | Msg => OK : Data was loaded before print. ]"
+            "[ EO_Method call =>  vDoctor.do.logFunctionsList() | Msg => OK : Data was loaded before print. ]"
           );
           return true;
         } else {
           console.warn("");
           console.trace();
           console.log(
-            "[ EO_Method call =>  V_WebDoctor.do.logFunctionsList() | Msg => ERROR : logFunctionsList could not load any. ]"
+            "[ EO_Method call =>  vDoctor.do.logFunctionsList() | Msg => ERROR : logFunctionsList could not load any. ]"
           );
           return false;
         }
@@ -108,7 +111,7 @@ const V_WebDoctor = {
       if (foundIt) {
         return true;
       } else {
-        console.warn("V_WebDoctor MSG:: Function triggered could not be found. registering and triggering now.");
+        console.warn("vDoctor MSG:: Function triggered could not be found. registering and triggering now.");
         if (tryToRegister) {
           this.registerFunction(name);
           this.triggered(name, false);
@@ -118,14 +121,16 @@ const V_WebDoctor = {
       }
     },
   },
+
   init: function () {
     this._this = this;
     this.do.init(this);
     this.data._this = this;
     this.config._this = this;
   },
+
 };
 
-V_WebDoctor.init();
+vDoctor.init();
 
-module.exports = V_WebDoctor;
+module.exports = vDoctor;
