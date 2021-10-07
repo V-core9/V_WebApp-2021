@@ -7,7 +7,7 @@ const vDomPrinter = {
     this.HTML.templates.forEach(item => {
       //console.log(item);
       if (objName == item.name) {
-        console.log("FOUND SECTION TEMPLATE");
+        //console.log("FOUND SECTION TEMPLATE");
         resp = item;
       }
     });
@@ -20,7 +20,7 @@ const vDomPrinter = {
       result = this.findByName(templateItem.type);
       result = result.view(templateItem.data);
     } else {
-      console.warn("ERROR TYPE EMPTY");
+      //console.warn("ERROR TYPE EMPTY");
       result = false;
     }
     return result;

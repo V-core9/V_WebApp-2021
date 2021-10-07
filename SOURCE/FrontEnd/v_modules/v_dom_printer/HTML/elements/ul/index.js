@@ -3,12 +3,10 @@ const UL = (elemOL = []) => {
   console.log(typeof elemOL )
   if (typeof elemOL === "array" || typeof elemOL === "object") {
     
-    if (elemOL.length > 0) {
-      response += `<ul>`;
+  if (elemOL.length > 0) {
     elemOL.forEach(item => {
-      response += `<li> ${item}  </li> `;
+      response += `- ${item}   `;
     })
-    response += `</ul>`;
   } else {
     response = `WARNING :: 0 Items proveded for the UNORDERED_LIST to print.`;
   }

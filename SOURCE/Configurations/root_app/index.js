@@ -1,4 +1,4 @@
-const appMode = "dev";
+const appMode = "LIVE";
 
 switch (appMode) {
   case "dev":

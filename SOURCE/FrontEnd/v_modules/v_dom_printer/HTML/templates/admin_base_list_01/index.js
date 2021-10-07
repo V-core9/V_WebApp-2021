@@ -49,7 +49,6 @@ const admin_base_list_01 = {
             </style>`;
   },
   onload: () => {
-    //alert('yeaaa');
     var dataList = (typeof appConfigPageInfo !== "undefined") ? appConfigPageInfo : null;
     if (dataList !== null) {
       var htmlToPrint = `<V_BLOCK>

@@ -18,13 +18,13 @@
     "g_install": "npm install -g clinic autocannon ",
     "clinic_doctor": "clinic doctor --on-port 'autocannon localhost:420' -- node  SOURCE/BackEnd/app_server.js",
     "clinic_flame": "clinic flame --on-port 'autocannon localhost:420' -- node  SOURCE/BackEnd/app_server.js",
-    "clinic_bubbleprof": "clinic bubbleprof --on-port ‘autocannon localhost:420 -- node  SOURCE/BackEnd/app_server.js",
+    "clinic_bubbleprof": "clinic bubbleprof --on-port 'autocannon localhost:420 -- node  SOURCE/BackEnd/app_server.js",
     "ngrok_start": " start bash -c \" bash system/ngrok_autorunner.sh \" ",
     "ngrok_download": " start bash -c \" cd system ; curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip > ngrok_win.zip ; unzip ngrok_win.zip ; rm ngrok_win.zip \" && exit 1 ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start_server": " start bash -c \" node  SOURCE/BackEnd/app_server.js \"  ",
     "start_app": "  start bash -c \" npm run build  \" &&  bash -c \" npm run start_server  \" ",
-    "start_dev": " start bash -c \"nodemon --exec  npm run build\" && start bash -c \" nodemon --exec  npm run start_server  \"   ",
+    "start_dev": " start bash -c \"nodemon --exec  npm run build\" && start bash -c \" nodemon ./SOURCE/BackEnd/app_server.js   \"   ",
     "build": " bash -c \" rm -r -f ./PUBLIC/* \" && bash -c \" npx webpack \" && bash -c \" node SOURCE/FrontEnd/v_modules/__autorefresh_browser/json_updater.js; \"  && bash -c \" node-sass -r SOURCE/FrontEnd/scss -o PUBLIC/assets/style/css  \" && bash -c \" cp -r -f ./SOURCE/static/* ./PUBLIC/ \"   "
   },
   "repository": {
