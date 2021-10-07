@@ -18,11 +18,11 @@ div#debug_side {
   color: white;
   position: absolute;
   top: 0px;
-  left: -370px;
+  left: -100%;
   height: calc(100% - 20px);
-  width: 350px;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.25);
+  width: 100%;
+ /* padding: 10px;
+  background: rgba(0, 0, 0, 0.25);*/  
   transition: 0.25s ease all;
 }
 
@@ -87,7 +87,7 @@ p.eventLogItem.deleting {
 
 div#events_log {
   padding: 5px;
-  height: 50%;
+  min-height: 50%;
   width: calc(100% - 10px);
   overflow: hidden;
   overflow-y: scroll;

@@ -12,6 +12,7 @@ menuObj = {
   "menus": [
     {
       "name": "body",
+      "selector": "body",
       "items": [{
         "name": "<i class='fa fa-pencil' aria-hidden='true'></i> Remove Menu [eventLogMenu]",
         "func": "removeEventLogMenu"
@@ -28,6 +29,7 @@ menuObj = {
     },
     {
       "name": "Sample01",
+      "selector": "first",
       "items": [{
         "name": "<i class='fa fa-facebook' aria-hidden='true'></i> Add Menu [eventLogMenu]",
         "func": "test_add"
@@ -37,51 +39,54 @@ menuObj = {
         "func": "test_add"
       },
       {
-        "name": "<i class='fa fa-pencil' aria-hidden='true'></i> ZZZZZ",
+        "name": "<i class='fa fa-pencil' aria-hidden='true'></i> alertTargetHTML",
         "func": "alertTargetHTML",
         "status": "disabled"
       }]
     },
     {
       "name": "testID",
+      "selector": "testID",
       "items": [{
-        "name": "Remove Menu 'Sample01'",
+        "name": "🧯 Remove Menu 'Sample01'",
         "func": "removeSample01"
       },
       {
-        "name": "TEAAA",
+        "name": "🎉 alertTargetHTML",
         "func": "alertTargetHTML"
       },
       {
-        "name": "ZZZZZ",
+        "name": "📍 alertTargetHTML",
         "func": "alertTargetHTML",
         "status": "disabled"
       }]
     },
     {
       "name": "anaMenu",
+      "selector": "anaMenu",
       "items": [{
-        "name": "First Item",
+        "name": "💥 alertTargetHTML",
         "func": "alertTargetHTML",
         "status": "disabled"
       },
       {
-        "name": "Clear Event Log List",
+        "name": "❌ Clear Event Log List",
         "func": "clearEventLog"
       },
       {
-        "name": "Clear Event Log List",
+        "name": "💢 Clear Event Log List",
         "func": "clearEventLog"
       }]
     },
     {
       "name": "events_log",
+      "selector": "events_log",
       "items": [{
-        "name": "Clear Event Log List",
+        "name": "💨 Clear Event Log List",
         "func": "clearEventLog"
       },
       {
-        "name": "Clear Event Log List",
+        "name": "💣 Clear Event Log List",
         "func": "clearEventLog",
         "status": "disabled"
       }]
@@ -104,11 +109,11 @@ function showContextMenu(e) {
     x = "";
     var d = getEventElement(e);
     for (i in menuObj.menus) {
-      if ((d.id == menuObj.menus[i].name) || (d.classList.contains(menuObj.menus[i].name)) || (d.tagName == menuObj.menus[i].name.toUpperCase())) {
+      if ((d.id == menuObj.menus[i].selector) || (d.classList.contains(menuObj.menus[i].selector)) || (d.tagName == menuObj.menus[i].selector.toUpperCase())) {
 
         if (!(typeof debugRCmenu === "undefined")) {
           if (debugRCmenu == "full-with-menu-title") {
-            x += "<button class='titleMenu disabled'>" + menuObj.menus[i].name + "</button>";
+            x += "<button class='titleMenu disabled'>" + menuObj.menus[i].selector + "</button>";
           }
         }
         for (j in menuObj.menus[i].items) {
@@ -214,7 +219,7 @@ function debugFunc(e) {
   var helperString = "";
   for (i in menuObj.menus) {
 
-    helperString += "<div  class='titleMenu'><h5>" + menuObj.menus[i].name + "</h5>";
+    helperString += "<div  class='titleMenu'><h5>NAME :: " + menuObj.menus[i].name + "</h5><h5>SELECTOR :: " + menuObj.menus[i].selector + "</h5>";
     for (j in menuObj.menus[i].items) {
       var status = "";
       if (menuObj.menus[i].items[j].status !== undefined) {
@@ -298,7 +303,7 @@ function removeMenu(name) {
   for (i in menuObj.menus) {
     if (name == menuObj.menus[i].name) {
       menuObj.menus.splice(i, 1);
-      tester = true;
+      tester = true;``
     }
   }
   if (tester) {
@@ -394,7 +399,7 @@ if (!(typeof debugRCmenu === "undefined")) {
   if (debugRCmenu != false) {
     window.addEventListener("mousemove", moveMouseDebug);
     var debugSide = document.createElement("DIV");   // Create a <button> element
-    debugSide.innerHTML = "<a class='debug_toggler' onclick='toggleDebugSide()' title='Toggle Debug'>>></a><div class='debug_inner'><h2>Debug Info </h2><div class='optionsDebugLog'><button onclick='clearEventLog()'>Clear Event Log</button><button onclick='consoleLogObject()'>Console.log( logObj )</button><button onclick=\"downloadLog( logObj, 'rcmenu-log', 'text/plain')\">Download Log</button></div><div id='events_log' ></div><div class='menusObjectPrint'></div></div>";
+    debugSide.innerHTML = "<a class='debug_toggler' onclick='toggleDebugSide()' title='Toggle Debug'>>></a><div class='debug_inner'><h2>📈 Debug Info </h2><div class='optionsDebugLog'><button onclick='clearEventLog()'>Clear Event Log</button><button onclick='consoleLogObject()'>Console.log( logObj )</button><button onclick=\"downloadLog( logObj, 'rcmenu-log', 'text/plain')\">Download Log</button></div><div id='events_log' ></div><h3>⚡ Right_Click Menus Available :</h3><div class='menusObjectPrint'></div></div>";
     debugSide.setAttribute("id", "debug_side");
     document.querySelector("#demo4 .con-body").appendChild(debugSide);
     test_add();
@@ -419,8 +424,9 @@ function test_add() {
 
   var customMenu = {
     "name": "eventLogMenu",
+    "selector": "eventLogItem",
     "items": [{
-      "name": "<i class='fa fa-info' aria-hidden='true'></i> Show More Info",
+      "name": "<i class='fa fa-info' aria-hidden='true'></i> alertTargetHTML",
       "func": "alertTargetHTML",
       "status": "disabled"
     },

@@ -30,7 +30,8 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: .25em 1em
+  padding: .25em 1em;
+  background: #2196f380;
 }
 
 .v_box .con-body {
@@ -43,6 +44,9 @@
   flex: 1;
   overflow: auto;
   position: relative;
+  background: radial-gradient(#2196f380, transparent);
+  background-size: 100% 200%;
+  background-position: bottom center;
 }
 
 #demo1  {
@@ -62,13 +66,13 @@
 
 
 #demo1 .con-header {
-  background: #00ff0024;
+  color: lime;
 }
 
 #demo2 .con-header{
-  background: #0000ff24;
+  color: #006eff;
 }
 
 #demo3 .con-header{
-  background: #ff000024;
+  color: #ff0000;
 }

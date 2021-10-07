@@ -139,7 +139,7 @@ function windowMouseMove(e) {
         if (document.querySelector('.resizeHandleJS')) {
           document.querySelector('.resizeHandleJS').remove();
         }
-        helperResJS.innerHTML += '<div class="resizeHandleJS" style="position: absolute; top: calc(100% - 10px); left: calc(100% - 10px); border-radius: 50%; box-shadow: 0 2px 3px gray; width: 20px; height: 20px; background: gray; color:white; font-weight: 800; display: flex; font-size: 30px; align-items: center; justify-content: center; cursor: re-size;">+</div>';
+        helperResJS.innerHTML += '<div class="resizeHandleJS" style="position: absolute; top: calc(100% - 10px); left: calc(100% - 10px); border-radius: 50%; box-shadow: 0 2px 3px gray; width: 20px; height: 20px; background: gray; color:white; font-weight: 800; display: flex; font-size: 30px; align-items: center; justify-content: center; cursor: re-size;">🔷</div>';
         appObj.hoverResize = true;
         if (helperResJS.classList.contains('snappedToRight')) {
           document.querySelector('.resizeHandleJS').style.left = '-2.5px';
@@ -147,7 +147,7 @@ function windowMouseMove(e) {
           document.querySelector('.resizeHandleJS').style.height = '100%';
           document.querySelector('.resizeHandleJS').style.width = '5px';
           document.querySelector('.resizeHandleJS').style.borderRadius = '0';
-          document.querySelector('.resizeHandleJS').innerHTML = '<div class="resizeHandleJS" style="padding:0.15em; background: gray; border-radius: 50%;"><></div>';
+          document.querySelector('.resizeHandleJS').innerHTML = '<div class="resizeHandleJS" style="padding:0.15em; background: gray; border-radius: 50%;">🔄</div>';
         }
         if (helperResJS.classList.contains('snappedToLeft')) {
           document.querySelector('.resizeHandleJS').style.left = 'calc(100% - 2.5px)';
@@ -155,7 +155,7 @@ function windowMouseMove(e) {
           document.querySelector('.resizeHandleJS').style.height = '100%';
           document.querySelector('.resizeHandleJS').style.width = '5px';
           document.querySelector('.resizeHandleJS').style.borderRadius = '0';
-          document.querySelector('.resizeHandleJS').innerHTML = '<div class="resizeHandleJS" style="padding:0.15em; background: gray; border-radius: 50%;"><></div>';
+          document.querySelector('.resizeHandleJS').innerHTML = '<div class="resizeHandleJS" style="padding:0.15em; background: gray; border-radius: 50%;">🔄</div>';
         }
       }
     } else {

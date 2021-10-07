@@ -225,7 +225,7 @@ function removeRootModal() {
 //? FULLSCREEEN FUNCTION
 //* Function to open fullscreen mode */
 function openFullscreen() {
-  var fullScreenBody = document.body;
+  var fullScreenBody = document.documentElement;
   if (fullScreenBody.requestFullscreen) {
     fullScreenBody.requestFullscreen();
   } else if (fullScreenBody.webkitRequestFullscreen) { /* Safari */
