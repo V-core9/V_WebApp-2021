@@ -39,7 +39,7 @@ var BAU_01 = {
   title: "Some random text for title!!!",
   subtitle: "more crappy text to fill it in",
   text: "aasind o soias inas dmpam sdp oamsp dmaspm ods"
-}
+};
 
 // TEMPLATES __ BASE_HERO_01 >>
 //[o> How to use it ?? ____>>>
@@ -56,14 +56,14 @@ var BH_01 = {
     height: 200,
     alt: "VERY NICE LOGO YEAAA!!!!",
   },
-}
+};
 
 // TEMPLATES __ BASE_NEWSLETTER_01 >>
 //[o> How to use it ?? ____>>>
 var BNL_01 = {
   title: "Some NEWSLETTER  for title!!!",
   text: "aasind o soias inas dmpam sdp oamsp dmaspm ods"
-}
+};
 //---------------------------------------------------------------
 
 vDomPrinter.templates.forEach(item => {
@@ -93,6 +93,6 @@ vDomPrinter.templates.forEach(item => {
     default:
       break;
   }
-})
+});
 
 

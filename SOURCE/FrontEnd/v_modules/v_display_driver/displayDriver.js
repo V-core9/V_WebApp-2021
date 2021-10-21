@@ -276,7 +276,7 @@ const V_DisplayDriver = {
       console.error(error);
     }
   }
-}
+};
 
 let vDisplay = V_DisplayDriver;
 
@@ -306,6 +306,6 @@ let V_DomS = getStyle;
 window.onload = () => {
   vDisplay.page = homePageData;
   vDisplay.loadPage();
-}
+};
 
 module.exports = V_DisplayDriver;

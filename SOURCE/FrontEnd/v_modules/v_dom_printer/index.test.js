@@ -46,7 +46,7 @@ var BAU_01 = {
   title: "Some random text for title!!!",
   subtitle: "more crappy text to fill it in",
   text: "aasind o soias inas dmpam sdp oamsp dmaspm ods"
-}
+};
 
 // << Returns HTML filled in with data....
 console.log(vDomPrinter.templates.base_about_us_01.html(BAU_01));
@@ -69,7 +69,7 @@ var BH_01 = {
     height: 200,
     alt: "VERY NICE LOGO YEAAA!!!!",
   },
-}
+};
 
 // << Returns HTML filled in with data....
 console.log(vDomPrinter.templates.base_hero_01.html(BH_01));
@@ -82,7 +82,7 @@ console.log(vDomPrinter.templates.base_hero_01.html(BH_01));
 var BNL_01 = {
   title: "Some NEWSLETTER  for title!!!",
   text: "aasind o soias inas dmpam sdp oamsp dmaspm ods"
-}
+};
 
 // << Returns HTML filled in with data....
 console.log(vDomPrinter.templates.base_newsletter_01.html(BNL_01));
