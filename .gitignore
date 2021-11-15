@@ -105,9 +105,4 @@ dist
 
 
 
-
-
-
-system/ngrok.exe
-system/ngrok_live.txt
-.clinic
+package-lock.json
