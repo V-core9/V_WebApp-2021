@@ -1,11 +1,5 @@
 const path = require("path");
 
-var cleanOutput = true;
-var appMode = "production";
-if (appConfig.name == "dev") {
-  appMode = "development";
-  cleanOutput = false;
-}
 
 module.exports = {
   mode: "development",
