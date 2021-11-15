@@ -1,5 +1,4 @@
 const path = require("path");
-const appConfig = require("./__appConfig");
 
 var cleanOutput = true;
 var appMode = "production";
@@ -9,19 +8,15 @@ if (appConfig.name == "dev") {
 }
 
 module.exports = {
-  mode: appMode,
+  mode: "development",
   entry: {
-    rootApplication: "./SOURCE/FrontEnd/app_client.js",
-    V_DisplayDriver: "./SOURCE/FrontEnd/v_modules/v_display_driver/displayDriver.js",
-    V_DomPrinter: "./SOURCE/FrontEnd/v_modules/v_dom_printer/domPrinter.js",
-    homepage: "./SOURCE/FrontEnd/pages/homepage.js",
-    vadmin: "./SOURCE/FrontEnd/pages/vadmin.js",
+    vApp: "./src/vApp.root.js",
   },
-  target: appConfig.target,
+  target: 'web',
   output: {
-    path: path.resolve(__dirname, "PUBLIC"),
+    path: path.resolve(__dirname, "public"),
     filename: "[name].V-core9.js",
-    clean: cleanOutput,
+    clean: false,
   },
   module: {
     rules: [

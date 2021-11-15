@@ -1,2 +1,0 @@
-# RCmenu
-Custom ContextMenu JS
